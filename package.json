@@ -1,0 +1,11 @@
+{
+  "name": "taxmate-vercel-fixed-ready",
+  "version": "2.0.0",
+  "private": true,
+  "description": "TaxMate static web app ready for Vercel deployment.",
+  "scripts": {
+    "build": "node scripts/prepare-public.js",
+    "start": "npx serve public"
+  },
+  "devDependencies": {}
+}

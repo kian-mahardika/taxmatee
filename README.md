@@ -1,4 +1,4 @@
-# TaxMate Vercel Fixed Ready
+﻿# PanduCore Vercel Fixed Ready
 
 Paket ini sudah dibuat agar aman untuk konfigurasi Vercel yang memakai Output Directory `public`.
 

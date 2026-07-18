@@ -1,4 +1,4 @@
-const fs = require('fs');
+﻿const fs = require('fs');
 const path = require('path');
 
 const root = process.cwd();
@@ -27,4 +27,4 @@ if (!fs.existsSync(path.join(publicDir, 'index.html'))) {
   process.exit(1);
 }
 
-console.log('TaxMate build complete. Vercel output directory: public');
+console.log('PanduCore build complete. Vercel output directory: public');

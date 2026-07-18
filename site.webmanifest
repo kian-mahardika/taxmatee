@@ -1,6 +1,6 @@
-{
-  "name": "TaxMate",
-  "short_name": "TaxMate",
+﻿{
+  "name": "PanduCore",
+  "short_name": "PanduCore",
   "description": "Teman pajak digital untuk wajib pajak mandiri.",
   "start_url": "/",
   "scope": "/",

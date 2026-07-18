@@ -1,4 +1,4 @@
-# Panduan Deploy TaxMate ke Vercel
+﻿# Panduan Deploy PanduCore ke Vercel
 
 ## 1. Upload ke GitHub
 

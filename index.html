@@ -1947,11 +1947,11 @@
 
     function confirmPayment(){
       showAILoading(
-        'Memverifikasi pembayaran…',
+        'Memverifikasi pembayaran\u2026',
         'Transaksi Anda sedang diproses. Mohon tunggu sebentar.',
-        [{icon:'💳',text:'Memverifikasi metode pembayaran'},{icon:'🔐',text:'Mengamankan transaksi'},{icon:'✅',text:'Menghubungkan ke konsultan'}],
+        [{icon:'\ud83d\udcb3',text:'Memverifikasi metode pembayaran'},{icon:'\ud83d\udd10',text:'Mengamankan transaksi'},{icon:'\u2705',text:'Menghubungkan ke konsultan'}],
         2000,
-        ()=>{
+        function(){
           appState.consult.sessionStartTime=Date.now();
           appState.consult.messages=[];
           const expert=appState.consult.selectedExpert;
@@ -1959,13 +1959,13 @@
           const profile=appState.pathway?appState.pathway.profile:'wajib pajak';
           appState.consult.messages.push({
             from:'consultant',
-            text:\`Halo ${userName}! Saya ${expert.name}. Senang bisa membantu Anda hari ini. 😊\`,
+            text:'Halo '+userName+'! Saya '+expert.name+'. Senang bisa membantu Anda hari ini. \ud83d\ude0a',
             time:new Date().toLocaleTimeString('id-ID',{hour:'2-digit',minute:'2-digit'})
           });
-          setTimeout(()=>{
+          setTimeout(function(){
             appState.consult.messages.push({
               from:'consultant',
-              text:\`Dari profil PanduCore Anda, saya lihat Anda adalah ${profile}. Apa pertanyaan atau kendala utama yang ingin kita bahas dalam sesi ini?\`,
+              text:'Dari profil PanduCore Anda, saya lihat Anda adalah '+profile+'. Apa pertanyaan atau kendala utama yang ingin kita bahas dalam sesi ini?',
               time:new Date().toLocaleTimeString('id-ID',{hour:'2-digit',minute:'2-digit'})
             });
             saveState();
@@ -1991,42 +1991,46 @@
         'Apa beda PPh 21 dan PPh 25?',
         'Apakah omzet saya kena PPN?'
       ];
-      main.innerHTML=\`
-        <div class="chat-shell">
-          <div class="chat-header">
-            <img class="chat-header-avatar" src="\${expert.photo}" alt="" onerror="this.src=''">
-            <div class="chat-header-info">
-              <p class="chat-header-name">\${escapeHTML(expert.name)}</p>
-              <span class="chat-header-status"><span class="chat-online-dot"></span> Online — Sesi Konsultasi Aktif</span>
-            </div>
-            <div class="chat-timer-wrap">⏱ <span class="chat-timer" id="chatTimerDisplay">60:00</span></div>
-            <button class="mini-btn" style="margin-left:8px;background:rgba(255,255,255,.15);color:#fff;border-color:rgba(255,255,255,.3)" onclick="endSession()">Akhiri Sesi</button>
-          </div>
-          <div class="chat-messages" id="chatMessages">
-            \${appState.consult.messages.map(m=>chatBubbleHTML(m,userName)).join('')}
-          </div>
-          <div class="chat-quick-replies">
-            \${quickReplies.map(q=>\`<button class="quick-reply-chip" onclick="sendQuickReply('\${escapeHTML(q)}')" type="button">\${escapeHTML(q)}</button>\`).join('')}
-          </div>
-          <div class="chat-input-bar">
-            <button class="chat-attach-btn" title="Lampiran" type="button">📎</button>
-            <textarea class="chat-input" id="chatInput" placeholder="Ketik pertanyaan Anda…" rows="1" onkeydown="if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();sendMessage()}"></textarea>
-            <button class="chat-send-btn" onclick="sendMessage()" type="button"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22,2 15,22 11,13 2,9"/></svg></button>
-          </div>
-        </div>\`;
+      const qrHTML=quickReplies.map(function(q){
+        return '<button class="quick-reply-chip" onclick="sendQuickReply(\''+escapeHTML(q)+'\')" type="button">'+escapeHTML(q)+'</button>';
+      }).join('');
+      const msgsHTML=appState.consult.messages.map(function(m){return chatBubbleHTML(m,userName);}).join('');
+      main.innerHTML=
+        '<div class="chat-shell">'+
+          '<div class="chat-header">'+
+            '<img class="chat-header-avatar" src="'+expert.photo+'" alt="" onerror="this.src=\'\'">'+
+            '<div class="chat-header-info">'+
+              '<p class="chat-header-name">'+escapeHTML(expert.name)+'</p>'+
+              '<span class="chat-header-status"><span class="chat-online-dot"></span> Online &mdash; Sesi Konsultasi Aktif</span>'+
+            '</div>'+
+            '<div class="chat-timer-wrap">&#9201; <span class="chat-timer" id="chatTimerDisplay">60:00</span></div>'+
+            '<button class="mini-btn" style="margin-left:8px;background:rgba(255,255,255,.15);color:#fff;border-color:rgba(255,255,255,.3)" onclick="endSession()">Akhiri Sesi</button>'+
+          '</div>'+
+          '<div class="chat-messages" id="chatMessages">'+msgsHTML+'</div>'+
+          '<div class="chat-quick-replies">'+qrHTML+'</div>'+
+          '<div class="chat-input-bar">'+
+            '<button class="chat-attach-btn" title="Lampiran" type="button">&#128206;</button>'+
+            '<textarea class="chat-input" id="chatInput" placeholder="Ketik pertanyaan Anda\u2026" rows="1" onkeydown="if(event.key===\'Enter\'&&!event.shiftKey){event.preventDefault();sendMessage()}"></textarea>'+
+            '<button class="chat-send-btn" onclick="sendMessage()" type="button"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22,2 15,22 11,13 2,9"/></svg></button>'+
+          '</div>'+
+        '</div>';
 
       // Start/resume timer
       startChatTimer();
       // Scroll to bottom
-      setTimeout(()=>{ const msgs=document.getElementById('chatMessages'); if(msgs) msgs.scrollTop=msgs.scrollHeight; },100);
+      setTimeout(function(){ var msgs=document.getElementById('chatMessages'); if(msgs) msgs.scrollTop=msgs.scrollHeight; },100);
     }
 
     function chatBubbleHTML(msg,userName){
       const isUser=msg.from==='user';
-      return \`<div class="msg-row\${isUser?' user':''}">
-        \${isUser?\`<div class="msg-avatar-user">\${(userName||'U').charAt(0).toUpperCase()}</div>\`:\`<img class="msg-avatar-small" src="\${appState.consult.selectedExpert?appState.consult.selectedExpert.photo:''}" alt="" onerror="this.style.display='none'">\`}
-        <div><div class="msg-bubble \${isUser?'user':'consultant'}">\${msg.text}</div><span class="msg-time">\${msg.time}</span></div>
-      </div>\`;
+      const photoSrc=appState.consult.selectedExpert?appState.consult.selectedExpert.photo:'';
+      const avatarHTML=isUser
+        ?'<div class="msg-avatar-user">'+(userName||'U').charAt(0).toUpperCase()+'</div>'
+        :'<img class="msg-avatar-small" src="'+photoSrc+'" alt="" onerror="this.style.display=\'none\'">';
+      return '<div class="msg-row'+(isUser?' user':'')+'">'+
+        avatarHTML+
+        '<div><div class="msg-bubble '+(isUser?'user':'consultant')+'">'+msg.text+'</div><span class="msg-time">'+msg.time+'</span></div>'+
+        '</div>';
     }
 
     function appendChatMessage(msg){
@@ -2048,10 +2052,11 @@
       const msgs=document.getElementById('chatMessages');
       if(!msgs) return;
       removeTypingIndicator();
+      const photoSrc=appState.consult.selectedExpert?appState.consult.selectedExpert.photo:'';
       const div=document.createElement('div');
       div.id='typingIndicator';
       div.className='msg-row';
-      div.innerHTML=\`<img class="msg-avatar-small" src="\${appState.consult.selectedExpert?appState.consult.selectedExpert.photo:''}" alt="" onerror="this.style.display='none'"><div class="msg-typing"><span></span><span></span><span></span></div>\`;
+      div.innerHTML='<img class="msg-avatar-small" src="'+photoSrc+'" alt="" onerror="this.style.display=\'none\'"><div class="msg-typing"><span></span><span></span><span></span></div>';
       msgs.appendChild(div);
       msgs.scrollTop=msgs.scrollHeight;
     }
@@ -2142,7 +2147,7 @@
         const m=Math.floor(remaining/60),s=remaining%60;
         const timerEl=document.getElementById('chatTimerDisplay');
         if(!timerEl){clearInterval(_chatTimer);return;}
-        timerEl.textContent=\`\${String(m).padStart(2,'0')}:\${String(s).padStart(2,'0')}\`;
+        timerEl.textContent=String(m).padStart(2,'0')+':'+String(s).padStart(2,'0');
         if(remaining<=600) timerEl.classList.add('urgent');
         if(remaining===0){clearInterval(_chatTimer);showSessionEndModal();}
       }
@@ -2152,16 +2157,18 @@
 
     function showSessionEndModal(){
       const expert=appState.consult.selectedExpert;
-      openInfoModal('Sesi Konsultasi Selesai ✅',`
-        <div style="text-align:center;padding:8px">
-          <p style="font-size:1rem">Sesi 1 jam dengan <strong>\${expert?escapeHTML(expert.name):''}</strong> telah selesai.</p>
-          <p style="color:var(--muted);font-size:.9rem">Terima kasih telah menggunakan layanan konsultasi PanduCore!</p>
-          <div style="margin:18px 0">
-            <p style="font-weight:750;margin-bottom:10px">Beri penilaian untuk konsultan ini:</p>
-            <div class="stars-wrap" id="starsWrap">\${[1,2,3,4,5].map(i=>\`<span class="star-btn" onclick="rateConsultant(\${i})" data-star="\${i}">⭐</span>\`).join('')}</div>
-          </div>
-          <button class="btn btn-primary btn-full" onclick="endSession()" style="margin-top:8px">Kembali ke Hasil PanduCore</button>
-        </div>`);
+      const starsHTML=[1,2,3,4,5].map(function(i){return '<span class="star-btn" onclick="rateConsultant('+i+')" data-star="'+i+'">⭐</span>';}).join('');
+      const expertName=expert?escapeHTML(expert.name):'';
+      const html='<div style="text-align:center;padding:8px">'+
+        '<p style="font-size:1rem">Sesi 1 jam dengan <strong>'+expertName+'</strong> telah selesai.</p>'+
+        '<p style="color:var(--muted);font-size:.9rem">Terima kasih telah menggunakan layanan konsultasi PanduCore!</p>'+
+        '<div style="margin:18px 0">'+
+        '<p style="font-weight:750;margin-bottom:10px">Beri penilaian untuk konsultan ini:</p>'+
+        '<div class="stars-wrap" id="starsWrap">'+starsHTML+'</div>'+
+        '</div>'+
+        '<button class="btn btn-primary btn-full" onclick="endSession()" style="margin-top:8px">Kembali ke Hasil PanduCore</button>'+
+        '</div>';
+      openInfoModal('Sesi Konsultasi Selesai ✅', html);
     }
 
     function rateConsultant(stars){

@@ -366,6 +366,205 @@
     }
     @keyframes fadeStep{from{opacity:0;transform:translateX(-8px)}to{opacity:1;transform:translateX(0)}}
 
+    /* ===== RESULT PAGE REDESIGN ===== */
+    .result-hero{background:linear-gradient(135deg,#071B33 0%,#0B2545 60%,#1559B7 100%);border-radius:22px;padding:32px;color:#fff;margin-bottom:0;position:relative;overflow:hidden}
+    .result-hero:before{content:'';position:absolute;top:-40px;right:-40px;width:200px;height:200px;background:rgba(245,183,0,.12);border-radius:50%}
+    .result-hero:after{content:'';position:absolute;bottom:-60px;left:-30px;width:160px;height:160px;background:rgba(79,123,247,.10);border-radius:50%}
+    .rh-top{display:flex;align-items:center;gap:20px;flex-wrap:wrap;position:relative;z-index:2}
+    .rh-avatar{width:72px;height:72px;border-radius:50%;border:3px solid rgba(245,183,0,.6);background:rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center;font-size:2rem;flex-shrink:0}
+    .rh-name{flex:1}
+    .rh-name h1{margin:0;font-size:1.5rem;color:#fff;letter-spacing:-.02em}
+    .rh-name p{margin:4px 0 0;color:rgba(255,255,255,.7);font-size:.9rem}
+    .rh-status-badge{display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border-radius:999px;font-weight:850;font-size:.92rem;margin-top:16px;position:relative;z-index:2}
+    .rh-status-badge.green{background:rgba(21,115,71,.9);color:#fff}
+    .rh-status-badge.yellow{background:rgba(183,121,31,.9);color:#fff}
+    .rh-status-badge.red{background:rgba(180,35,24,.9);color:#fff}
+    .rh-insight{margin-top:14px;padding:14px 16px;background:rgba(255,255,255,.1);border-radius:14px;color:rgba(255,255,255,.9);font-size:.9rem;line-height:1.5;position:relative;z-index:2;border:1px solid rgba(255,255,255,.12)}
+    .gauge-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:20px}
+    .gauge-wrap{background:#fff;border:1px solid var(--line);border-radius:18px;padding:18px 14px;text-align:center;box-shadow:var(--shadow-soft)}
+    .gauge-svg-wrap{position:relative;width:84px;height:84px;margin:0 auto 10px}
+    .gauge-svg{transform:rotate(-90deg)}
+    .gauge-bg{fill:none;stroke:#E8EEF6;stroke-width:8}
+    .gauge-fill{fill:none;stroke-width:8;stroke-linecap:round;transition:stroke-dashoffset 1.2s cubic-bezier(.4,0,.2,1)}
+    .gauge-inner{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+    .gauge-num{font-size:1.35rem;font-weight:950;line-height:1;color:var(--navy)}
+    .gauge-pct{font-size:.65rem;color:var(--muted);font-weight:700}
+    .gauge-lbl{font-size:.8rem;color:#4B5F78;font-weight:750;line-height:1.3}
+    .gauge-ctx{font-size:.72rem;color:var(--muted);margin-top:4px;line-height:1.3}
+    .action-next-box{background:linear-gradient(135deg,#FFF6D6,#FFFBEE);border:2px solid var(--gold);border-radius:18px;padding:18px 20px;margin-bottom:14px;display:flex;gap:14px;align-items:flex-start}
+    .action-next-icon{font-size:1.6rem;flex-shrink:0}
+    .action-next-box h3{margin:0 0 4px;color:#5A3800;font-size:1rem}
+    .action-next-box p{margin:0;color:#6B4C00;font-size:.9rem;line-height:1.5}
+    .action-tier-label{font-size:.75rem;font-weight:900;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:16px 0 8px}
+    .action-cards{display:grid;gap:10px}
+    .action-card{display:flex;gap:12px;align-items:flex-start;border-radius:14px;padding:14px;border-left:4px solid transparent;background:#fff;border:1px solid var(--line)}
+    .action-card.urgent{border-left:4px solid var(--danger);background:#FFF8F8}
+    .action-card.soon{border-left:4px solid var(--gold);background:#FFFCF2}
+    .action-card.later{border-left:4px solid var(--success);background:#F4FDF8}
+    .action-card-icon{font-size:1.3rem;flex-shrink:0;margin-top:2px}
+    .action-card h4{margin:0 0 3px;font-size:.92rem;color:var(--navy)}
+    .action-card p{margin:0;font-size:.84rem;color:var(--muted);line-height:1.4}
+    .checklist-progress{margin-bottom:14px}
+    .checklist-pbar{height:8px;background:#E8EEF6;border-radius:999px;overflow:hidden;margin-top:6px}
+    .checklist-pfill{height:100%;background:var(--success);border-radius:999px;transition:width .4s ease}
+    .checklist-items{display:grid;gap:8px}
+    .checklist-group-label{font-size:.75rem;font-weight:900;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin:12px 0 6px}
+    .cl-item{display:flex;align-items:center;gap:12px;padding:11px 13px;border-radius:12px;border:1px solid var(--line);background:#fff;cursor:pointer;transition:background .15s,border-color .15s}
+    .cl-item:hover{background:var(--surface-2)}
+    .cl-item.done{background:var(--surface-2);border-color:transparent}
+    .cl-item.done .cl-label{text-decoration:line-through;color:var(--muted)}
+    .cl-checkbox{width:22px;height:22px;border-radius:8px;border:2px solid #B8C5D7;flex-shrink:0;display:grid;place-items:center;transition:all .2s;background:#fff}
+    .cl-item.done .cl-checkbox{background:var(--success);border-color:var(--success);color:#fff;animation:checkBounce .3s cubic-bezier(.34,1.56,.64,1)}
+    @keyframes checkBounce{0%{transform:scale(0)}70%{transform:scale(1.15)}100%{transform:scale(1)}}
+    .cl-label{font-size:.9rem;color:var(--ink);font-weight:600;flex:1}
+    .cl-badge{font-size:.7rem;padding:3px 7px;border-radius:999px;font-weight:800}
+    .cl-badge.req{background:#FFF1F0;color:var(--danger);border:1px solid #F4C7C3}
+    .cl-badge.opt{background:var(--surface-3);color:var(--muted);border:1px solid var(--line)}
+    .roadmap{position:relative;padding-left:36px;display:grid;gap:0}
+    .roadmap:before{content:'';position:absolute;left:13px;top:12px;bottom:12px;width:2px;background:linear-gradient(to bottom,var(--blue),var(--gold))}
+    .rm-step{position:relative;padding:0 0 20px;cursor:pointer}
+    .rm-circle{position:absolute;left:-36px;top:2px;width:26px;height:26px;border-radius:50%;border:2px solid var(--line);background:#fff;display:grid;place-items:center;font-size:.75rem;transition:all .2s;z-index:1}
+    .rm-step.done .rm-circle{background:var(--success);border-color:var(--success);color:#fff}
+    .rm-step.active .rm-circle{background:var(--blue);border-color:var(--blue);color:#fff}
+    .rm-meta{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:4px}
+    .rm-step small{display:inline-flex;border:1px solid var(--line);background:var(--surface-2);color:var(--muted);border-radius:999px;padding:2px 8px;font-size:.7rem;font-weight:850}
+    .rm-step strong{display:block;color:var(--navy);font-size:.94rem}
+    .rm-step span{color:var(--muted);font-size:.86rem;display:block;margin-top:2px;line-height:1.4}
+    .rm-time{font-size:.72rem;color:var(--blue);font-weight:700;display:inline-flex;align-items:center;gap:4px}
+    .rm-step.done strong{color:var(--muted);text-decoration:line-through}
+    /* Tax Calendar */
+    .cal-wrap{background:#fff;border:1px solid var(--line);border-radius:20px;overflow:hidden}
+    .cal-header-bar{display:flex;align-items:center;justify-content:space-between;padding:14px 18px;background:var(--navy);color:#fff}
+    .cal-header-bar h3{margin:0;font-size:1rem}
+    .cal-nav{border:1px solid rgba(255,255,255,.3);background:transparent;color:#fff;border-radius:8px;padding:5px 10px;cursor:pointer;font-weight:700}
+    .cal-nav:hover{background:rgba(255,255,255,.15)}
+    .cal-weekdays{display:grid;grid-template-columns:repeat(7,1fr);background:var(--surface-3);text-align:center}
+    .cal-weekdays span{padding:8px 4px;font-size:.72rem;font-weight:800;color:var(--muted);text-transform:uppercase}
+    .cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:1px;background:var(--line)}
+    .cal-day{background:#fff;padding:6px;min-height:44px;text-align:center;position:relative;font-size:.82rem;color:var(--ink)}
+    .cal-day.empty{background:var(--surface-2)}
+    .cal-day.today{background:#EFF6FF}
+    .cal-day.today .cal-day-num{font-weight:900;color:var(--blue)}
+    .cal-day.event{cursor:pointer}
+    .cal-day.event .cal-day-num{color:#fff;width:24px;height:24px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;margin:-2px auto 0}
+    .cal-day.event-red .cal-day-num{background:var(--danger)}
+    .cal-day.event-gold .cal-day-num{background:var(--warn)}
+    .cal-day.event-blue .cal-day-num{background:var(--blue)}
+    .cal-day-dot{width:5px;height:5px;border-radius:50%;margin:2px auto 0}
+    .cal-countdown-list{padding:14px 18px;display:grid;gap:10px}
+    .cal-countdown-item{display:flex;align-items:center;gap:12px;padding:10px 12px;border-radius:12px;border:1px solid var(--line)}
+    .cal-evt-icon{font-size:1.2rem;flex-shrink:0}
+    .cal-evt-info{flex:1}
+    .cal-evt-info strong{display:block;font-size:.88rem;color:var(--navy)}
+    .cal-evt-info span{font-size:.78rem;color:var(--muted)}
+    .cal-evt-days{font-size:.78rem;font-weight:900;padding:4px 10px;border-radius:999px;white-space:nowrap}
+    .cal-evt-days.urgent{background:#FFF1F0;color:var(--danger);border:1px solid #F4C7C3}
+    .cal-evt-days.soon{background:#FFF8E6;color:var(--warn);border:1px solid #F3D277}
+    .cal-evt-days.ok{background:#EAF8F0;color:var(--success);border:1px solid #B9E4C8}
+    /* Premium Banner */
+    .premium-banner{background:linear-gradient(135deg,#071B33 0%,#1559B7 50%,#0B2545 100%);border-radius:22px;padding:28px 30px;color:#fff;position:relative;overflow:hidden;margin-top:0}
+    .premium-banner:before{content:'✨';position:absolute;top:-10px;right:20px;font-size:4rem;opacity:.15}
+    .premium-badge{display:inline-flex;align-items:center;gap:6px;background:var(--gold);color:#1E2A3D;border-radius:999px;padding:5px 12px;font-size:.75rem;font-weight:900;margin-bottom:12px}
+    .premium-banner h2{margin:0 0 8px;font-size:1.3rem;color:#fff}
+    .premium-banner p{margin:0 0 20px;color:rgba(255,255,255,.8);font-size:.92rem;line-height:1.5}
+    .btn-premium{background:var(--gold);color:#1E2A3D;border:none;border-radius:14px;padding:14px 24px;font-weight:900;font-size:1rem;cursor:pointer;display:inline-flex;align-items:center;gap:10px;transition:transform .15s,box-shadow .15s}
+    .btn-premium:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(245,183,0,.35)}
+    /* Consultant List */
+    .consult-header{display:flex;align-items:center;gap:14px;margin-bottom:22px;flex-wrap:wrap}
+    .consult-header h1{margin:0;flex:1;color:var(--navy)}
+    .filter-bar{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:20px}
+    .filter-btn{border:1px solid var(--line);background:#fff;color:var(--navy);border-radius:999px;padding:8px 14px;font-size:.84rem;font-weight:700;cursor:pointer;transition:.15s}
+    .filter-btn.active{background:var(--navy);color:#fff;border-color:var(--navy)}
+    .expert-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:18px}
+    .expert-card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:20px;box-shadow:var(--shadow-soft);transition:transform .16s,box-shadow .16s;position:relative}
+    .expert-card:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+    .expert-card.featured{border-color:var(--gold);}
+    .expert-card.featured:before{content:'⭐ Terpopuler';position:absolute;top:-1px;right:16px;background:var(--gold);color:#1E2A3D;font-size:.7rem;font-weight:900;padding:4px 10px;border-radius:0 0 10px 10px}
+    .expert-avatar{width:72px;height:72px;border-radius:50%;object-fit:cover;border:3px solid var(--surface-3);margin-bottom:12px}
+    .expert-name{font-size:1.05rem;font-weight:850;color:var(--navy);margin:0 0 2px}
+    .expert-title{font-size:.82rem;color:var(--muted);margin:0 0 10px}
+    .expert-tags{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:12px}
+    .expert-tag{font-size:.72rem;padding:3px 8px;border-radius:999px;background:var(--surface-3);color:#294462;border:1px solid var(--line);font-weight:800}
+    .expert-stats{display:flex;gap:12px;margin-bottom:14px;font-size:.82rem;color:var(--muted)}
+    .expert-stat span{font-weight:750;color:var(--ink)}
+    .expert-price{font-size:1.2rem;font-weight:950;color:var(--navy);margin-bottom:14px}
+    .expert-price small{font-size:.78rem;font-weight:600;color:var(--muted)}
+    .btn-choose{width:100%;background:var(--blue);color:#fff;border:none;border-radius:12px;padding:12px;font-weight:800;cursor:pointer;font-size:.9rem;transition:.15s}
+    .btn-choose:hover{background:var(--blue-2)}
+    /* Payment */
+    .pay-layout{display:grid;grid-template-columns:1fr 340px;gap:22px;align-items:start}
+    .pay-card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:24px}
+    .pay-card h2{margin:0 0 18px;color:var(--navy)}
+    .pay-expert-row{display:flex;gap:14px;align-items:center;padding:14px;border:1px solid var(--line);border-radius:14px;margin-bottom:20px;background:var(--surface-2)}
+    .pay-expert-row img{width:54px;height:54px;border-radius:50%;object-fit:cover}
+    .pay-expert-row strong{display:block;color:var(--navy)}
+    .pay-expert-row span{font-size:.84rem;color:var(--muted)}
+    .pay-methods{display:grid;gap:10px;margin-bottom:20px}
+    .pay-method{display:flex;align-items:center;gap:12px;padding:14px;border:2px solid var(--line);border-radius:14px;cursor:pointer;transition:.15s}
+    .pay-method:hover{border-color:var(--blue)}
+    .pay-method.selected{border-color:var(--blue);background:#EFF6FF}
+    .pay-method-icon{font-size:1.4rem;width:36px;text-align:center}
+    .pay-method-name{font-weight:750;color:var(--navy);flex:1}
+    .pay-summary{background:var(--surface-2);border-radius:14px;padding:16px}
+    .pay-row{display:flex;justify-content:space-between;padding:8px 0;font-size:.9rem;border-bottom:1px solid var(--line);color:var(--muted)}
+    .pay-row:last-child{border-bottom:none}
+    .pay-row.total{font-weight:900;font-size:1.05rem;color:var(--navy);padding-top:12px}
+    /* Chat */
+    .chat-shell{display:flex;flex-direction:column;height:calc(100vh - 180px);min-height:500px;background:#fff;border:1px solid var(--line);border-radius:20px;overflow:hidden;box-shadow:var(--shadow-soft)}
+    .chat-header{background:var(--navy);padding:14px 18px;display:flex;align-items:center;gap:12px;flex-shrink:0}
+    .chat-header-avatar{width:44px;height:44px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,255,255,.3)}
+    .chat-header-info{flex:1}
+    .chat-header-name{color:#fff;font-weight:850;font-size:1rem;margin:0}
+    .chat-header-status{color:rgba(255,255,255,.7);font-size:.8rem;display:flex;align-items:center;gap:5px}
+    .chat-online-dot{width:8px;height:8px;border-radius:50%;background:#22c55e;display:inline-block}
+    .chat-timer-wrap{background:var(--surface-2);border:2px solid var(--gold);border-radius:10px;padding:5px 12px;display:flex;align-items:center;gap:6px}
+    .chat-timer{font-size:1.1rem;font-weight:950;color:var(--navy);font-variant-numeric:tabular-nums}
+    .chat-timer.urgent{color:var(--danger);animation:timerPulse 1s ease-in-out infinite}
+    @keyframes timerPulse{0%,100%{opacity:1}50%{opacity:.6}}
+    .chat-messages{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:12px;background:linear-gradient(180deg,#F7FAFF 0%,#fff 100%)}
+    .msg-row{display:flex;gap:8px;align-items:flex-end}
+    .msg-row.user{flex-direction:row-reverse}
+    .msg-avatar-small{width:32px;height:32px;border-radius:50%;object-fit:cover;flex-shrink:0}
+    .msg-avatar-user{width:32px;height:32px;border-radius:50%;background:var(--blue);display:grid;place-items:center;color:#fff;font-weight:900;font-size:.9rem;flex-shrink:0}
+    .msg-bubble{max-width:70%;padding:11px 14px;border-radius:18px;font-size:.9rem;line-height:1.5}
+    .msg-bubble.consultant{background:#fff;border:1px solid var(--line);border-bottom-left-radius:4px;color:var(--ink)}
+    .msg-bubble.user{background:var(--blue);color:#fff;border-bottom-right-radius:4px}
+    .msg-time{font-size:.7rem;color:var(--muted);margin-top:4px;display:block}
+    .msg-typing{display:flex;gap:4px;align-items:center;padding:11px 14px;background:#fff;border:1px solid var(--line);border-radius:18px;border-bottom-left-radius:4px;width:60px}
+    .msg-typing span{width:8px;height:8px;border-radius:50%;background:var(--muted);animation:typingDot .9s ease-in-out infinite}
+    .msg-typing span:nth-child(2){animation-delay:.18s}
+    .msg-typing span:nth-child(3){animation-delay:.36s}
+    @keyframes typingDot{0%,80%,100%{transform:scale(0.6);opacity:.5}40%{transform:scale(1);opacity:1}}
+    .chat-quick-replies{padding:8px 14px;display:flex;gap:8px;overflow-x:auto;flex-shrink:0;border-top:1px solid var(--line);background:#fff}
+    .quick-reply-chip{white-space:nowrap;border:1px solid var(--blue);color:var(--blue);background:#fff;border-radius:999px;padding:7px 13px;font-size:.82rem;font-weight:700;cursor:pointer;transition:.15s}
+    .quick-reply-chip:hover{background:var(--blue);color:#fff}
+    .chat-input-bar{display:flex;gap:8px;align-items:center;padding:12px 14px;border-top:1px solid var(--line);flex-shrink:0;background:#fff}
+    .chat-input{flex:1;border:1px solid var(--line);border-radius:12px;padding:10px 13px;font-size:.9rem;outline:none;resize:none;max-height:80px;overflow-y:auto}
+    .chat-input:focus{border-color:var(--blue);box-shadow:var(--focus)}
+    .chat-send-btn{background:var(--blue);color:#fff;border:none;border-radius:12px;width:42px;height:42px;display:grid;place-items:center;cursor:pointer;flex-shrink:0;transition:.15s}
+    .chat-send-btn:hover{background:var(--blue-2)}
+    .chat-attach-btn{background:var(--surface-2);color:var(--muted);border:1px solid var(--line);border-radius:12px;width:42px;height:42px;display:grid;place-items:center;cursor:pointer;font-size:1.1rem;flex-shrink:0}
+    /* Rating modal */
+    .stars-wrap{display:flex;gap:8px;justify-content:center;margin:16px 0}
+    .star-btn{font-size:2rem;cursor:pointer;transition:transform .15s;opacity:.3}
+    .star-btn.active{opacity:1}
+    .star-btn:hover{transform:scale(1.2)}
+    /* Responsive result */
+    @media(max-width:860px){
+      .gauge-grid{grid-template-columns:repeat(2,1fr)}
+      .pay-layout{grid-template-columns:1fr}
+      .result-full-width{grid-column:1!important}
+    }
+    @media(max-width:680px){
+      .result-two-col{grid-template-columns:1fr!important}
+    }
+    @media(max-width:480px){
+      .gauge-grid{grid-template-columns:repeat(2,1fr);gap:10px}
+      .expert-grid{grid-template-columns:1fr}
+      .pay-layout{grid-template-columns:1fr}
+      .chat-shell{height:calc(100vh - 140px)}
+    }
+
     @media print{
       .topbar,.progress-wrap,.footer,.action-bar,.question-footer,.side-panel,.ai-loading-overlay{display:none!important}
       body{background:#fff}
@@ -844,6 +1043,10 @@
         appState.answers = saved.answers || {};
         appState.workspace = saved.workspace || {};
         appState.scores = Object.assign({readiness:0,risk:0,literacyNeed:0,documentCompleteness:0}, saved.scores || {});
+        appState.checklist = saved.checklist || {};
+        appState.roadmapDone = saved.roadmapDone || {};
+        appState.consult = Object.assign({selectedExpert:null,paymentMethod:null,sessionStartTime:null,messages:[],rating:0}, saved.consult || {});
+        appState.calMonth = saved.calMonth || null;
       }catch(e){ localStorage.removeItem(STORAGE_KEY); }
     }
 
@@ -870,7 +1073,7 @@
       headerStatus.textContent = getHeaderStatus();
     }
     function getStepLabel(step){
-      const map = {welcome:'Beranda',login:'Masuk',security:'Keamanan',mode:'Pilih tampilan',language:'Pilih gaya bahasa',npwp:'Status NPWP',questionnaire:'Pertanyaan terpandu',workspace:'Ruang persiapan',result:'Hasil PanduCore'};
+      const map = {welcome:'Beranda',login:'Masuk',security:'Keamanan',mode:'Pilih tampilan',language:'Pilih gaya bahasa',npwp:'Status NPWP',questionnaire:'Pertanyaan terpandu',workspace:'Ruang persiapan',result:'Hasil PanduCore',consult_list:'Pilih Konsultan',consult_pay:'Pembayaran',consult_chat:'Sesi Konsultasi'};
       return map[step] || 'PanduCore';
     }
     function getHeaderStatus(){
@@ -881,7 +1084,7 @@
     function render(){
       if(appState.settings.layoutMode) setLayoutMode(appState.settings.layoutMode);
       updateProgress();
-      const routes = {welcome:renderWelcome,login:renderLogin,security:renderSecurity,mode:renderMode,language:renderLanguage,npwp:renderNPWP,questionnaire:renderQuestionnaire,workspace:renderWorkspace,result:renderResult};
+      const routes = {welcome:renderWelcome,login:renderLogin,security:renderSecurity,mode:renderMode,language:renderLanguage,npwp:renderNPWP,questionnaire:renderQuestionnaire,workspace:renderWorkspace,result:renderResult,consult_list:renderConsultList,consult_pay:renderConsultPay,consult_chat:renderConsultChat};
       (routes[appState.step] || renderWelcome)();
       window.scrollTo({top:0,behavior:'smooth'});
     }
@@ -1273,64 +1476,351 @@
       return list;
     }
 
+    // ===== CONSULTANT DATA =====
+    const consultants = [
+      {id:1,name:'Budi Santoso, S.E., BKP',title:'Konsultan Pajak Tersertifikasi',photo:'assets/consultants/consultant-1.jpg',tags:['Perorangan','UMKM Kecil','SPT OP'],rating:4.8,sessions:312,price:75000,scale:'personal',bio:'Spesialis SPT Orang Pribadi dan UMKM kecil dengan pengalaman 12 tahun. Membantu lebih dari 300 klien perorangan.'},
+      {id:2,name:'Sari Dewi Rahayu, Ak.',title:'Akuntan Publik & Konsultan Pajak',photo:'assets/consultants/consultant-2.jpg',tags:['Perorangan','Freelancer','UMKM'],rating:4.9,sessions:287,price:75000,scale:'personal',bio:'Ahli pajak perorangan dan freelancer. Aktif membantu pelaku ekonomi kreatif memahami kewajiban pajak mereka.',featured:true},
+      {id:3,name:'Hendra Pratama, S.E., M.Ak.',title:'Tax Advisor UMKM Menengah',photo:'assets/consultants/consultant-3.jpg',tags:['UMKM Menengah','Marketplace','PPh Final'],rating:4.7,sessions:198,price:150000,scale:'umkm',bio:'Konsultan pajak untuk UMKM menengah dan penjual marketplace. Pakar PPh Final dan pencatatan omzet.'},
+      {id:4,name:'Ratna Kusuma Wardani, CPA',title:'Senior Tax Consultant',photo:'assets/consultants/consultant-4.jpg',tags:['UMKM Menengah','Multi Sumber','PPN'],rating:5.0,sessions:423,price:150000,scale:'umkm',bio:'15 tahun pengalaman menangani UMKM menengah kompleks. Rating sempurna dari ratusan klien.',featured:true},
+      {id:5,name:'Dimas Aryo Nugroho, BKP',title:'Digital & Marketplace Tax Specialist',photo:'assets/consultants/consultant-5.jpg',tags:['Marketplace','Digital','E-commerce'],rating:4.8,sessions:156,price:150000,scale:'umkm',bio:'Spesialis pajak platform digital, marketplace, dan e-commerce. Mengikuti regulasi pajak digital terbaru.'},
+      {id:6,name:'Fitri Andayani, S.E.',title:'Spesialis PPh Final & UMKM',photo:'assets/consultants/consultant-6.jpg',tags:['UMKM Kecil','PPh Final','Warung'],rating:4.7,sessions:241,price:75000,scale:'personal',bio:'Membantu usaha kecil dan warung memahami PPh Final 0,5%. Bahasa sederhana, solusi praktis.'},
+      {id:7,name:'Ahmad Fauzan Hidayat, M.M.',title:'Tax Manager & Corporate Advisor',photo:'assets/consultants/consultant-7.jpg',tags:['Korporat','PPh Badan','Transfer Pricing'],rating:4.9,sessions:89,price:350000,scale:'corporate',bio:'Mantan manajer pajak perusahaan multinasional. Menangani pajak korporat skala menengah hingga besar.'},
+      {id:8,name:'Mega Lestari Wulandari, CPA',title:'International Tax & Transfer Pricing',photo:'assets/consultants/consultant-8.jpg',tags:['Korporat','International','Transfer Pricing'],rating:4.9,sessions:67,price:350000,scale:'corporate',bio:'Ahli perpajakan internasional dan transfer pricing. Latar belakang Big 4 accounting firm.',featured:true},
+      {id:9,name:'Reza Mahardika, BKP, M.Ak.',title:'Senior Tax Consultant Korporat',photo:'assets/consultants/consultant-9.jpg',tags:['Korporat','PPh Badan','Restitusi'],rating:4.8,sessions:112,price:350000,scale:'corporate',bio:'Spesialis restitusi pajak dan sengketa pajak korporat. Pengalaman 18 tahun di bidang perpajakan badan.'},
+      {id:10,name:'Nadia Putri Sanjaya, S.E.',title:'UMKM & Freelancer Tax Specialist',photo:'assets/consultants/consultant-10.jpg',tags:['UMKM Kecil','Freelancer','Pemula'],rating:4.6,sessions:178,price:75000,scale:'personal',bio:'Konsultan ramah untuk UMKM pemula dan freelancer. Penjelasan bahasa sehari-hari tanpa istilah teknis berlebihan.'}
+    ];
+
+    // ===== TAX CALENDAR EVENTS =====
+    const taxEvents = [
+      {month:0,day:31,label:'Batas Bayar PPh Masa Des',type:'blue',icon:'💳',recurringMonthly:false},
+      {day:15,label:'Batas Setor PPh Pasal 21',type:'gold',icon:'💰',recurringMonthly:true},
+      {day:20,label:'Batas Lapor SPT Masa PPh 21',type:'blue',icon:'📋',recurringMonthly:true},
+      {day:25,label:'Batas Lapor SPT Masa PPN',type:'gold',icon:'🧾',recurringMonthly:true},
+      {month:2,day:31,label:'Batas SPT Tahunan OP',type:'red',icon:'⚠️',recurringMonthly:false},
+      {month:3,day:30,label:'Batas SPT Tahunan Badan',type:'red',icon:'🏢',recurringMonthly:false},
+      {month:6,day:31,label:'Batas Perpanjangan SPT Tahunan OP',type:'gold',icon:'📅',recurringMonthly:false}
+    ];
+
+    function getEventsForDay(year,month,day){
+      return taxEvents.filter(e=>{
+        if(e.recurringMonthly) return e.day===day;
+        return e.month===month && e.day===day;
+      });
+    }
+
+    function getUpcomingEvents(){
+      const today = new Date();
+      const results = [];
+      for(let m=0;m<12;m++){
+        for(let d=1;d<=31;d++){
+          const checkDate = new Date(today.getFullYear(),today.getMonth()+Math.floor(m/1),d);
+          if(isNaN(checkDate.getTime())) continue;
+          const evts = getEventsForDay(checkDate.getFullYear(),checkDate.getMonth(),d);
+          evts.forEach(e=>{
+            const diff = Math.ceil((checkDate-today)/(1000*60*60*24));
+            if(diff>=0 && diff<=90) results.push({...e,date:checkDate,diff});
+          });
+        }
+        if(results.length>=5) break;
+      }
+      results.sort((a,b)=>a.diff-b.diff);
+      const seen=new Set();
+      return results.filter(r=>{
+        const key=r.label+r.diff;
+        if(seen.has(key)) return false;
+        seen.add(key);
+        return true;
+      }).slice(0,4);
+    }
+
     function renderResult(){
       collectTagsAndScores();
       saveState();
+      const scores = appState.scores;
+      const path = appState.pathway;
+      const name = appState.user.displayName || 'Anda';
       const guide = getCoretaxGuide();
-      const riskLabel = appState.scores.risk >= 65 ? 'Tinggi' : appState.scores.risk >= 40 ? 'Sedang' : 'Rendah';
-      const riskBadge = appState.scores.risk >= 65 ? 'badge-red' : appState.scores.risk >= 40 ? 'badge-gold' : 'badge-green';
+      const checklist = getChecklist();
+      const recs = appState.recommendations;
+      const tags = new Set(appState.tags);
+
+      // Hero status
+      let statusClass='yellow', statusIcon='⚡', statusText='Perlu Persiapan';
+      if(scores.readiness>=70&&scores.risk<50){statusClass='green';statusIcon='✅';statusText='Siap Lapor';}
+      else if(scores.risk>=65||scores.readiness<40){statusClass='red';statusIcon='🔴';statusText='Butuh Tindakan Segera';}
+
+      // Profile avatar emoji
+      const avatarMap={'type_marketplace':'🏪','type_msme':'🏭','type_freelancer':'💻','type_employee':'🧑💼','type_student':'📚'};
+      let avatarEmoji='👤';
+      for(const [tag,emoji] of Object.entries(avatarMap)){ if(tags.has(tag)){avatarEmoji=emoji;break;} }
+
+      // Personalized insight
+      let insight = `Sebagai ${path.profile}, jalur utama yang disarankan untuk ${name} adalah ${path.main}.`;
+      if(tags.has('type_freelancer')) insight += ' Pastikan rekap invoice dan bukti potong sudah disiapkan sebelum membuka Coretax.';
+      else if(tags.has('type_marketplace')) insight += ' Unduh riwayat transaksi marketplace terlebih dahulu untuk mempermudah pelaporan.';
+      else if(tags.has('npwp_none')) insight += ' Langkah pertama adalah menyelesaikan registrasi identitas perpajakan melalui kanal resmi.';
+
+      // Action cards
+      const urgentActions=[], soonActions=[], laterActions=[];
+      if(tags.has('npwp_none')||tags.has('need_registration')) urgentActions.push({icon:'🆔',title:'Daftarkan NPWP / Aktivasi Akun',desc:'Selesaikan registrasi melalui kanal resmi DJP sebelum melanjutkan langkah apapun.'});
+      if(tags.has('coretax_problem')) urgentActions.push({icon:'🔧',title:'Perbaiki Akses Coretax',desc:'Catat pesan error dan gunakan jalur reset resmi. Jangan berbagi kode OTP.'});
+      if(tags.has('docs_low')) urgentActions.push({icon:'📂',title:'Lengkapi Dokumen Utama',desc:'Kumpulkan bukti potong, rekap penghasilan, atau catatan omzet sebelum mulai mengisi.'});
+      if(tags.has('type_employee')) soonActions.push({icon:'📄',title:'Minta Bukti Potong dari Kantor',desc:'Hubungi HRD atau bendahara untuk mendapatkan bukti potong PPh 21.'});
+      if(tags.has('type_freelancer')) soonActions.push({icon:'🗂️',title:'Rekap Penghasilan Klien',desc:'Buat daftar klien, jumlah pembayaran, dan bukti potong bila ada.'});
+      if(tags.has('type_msme')||tags.has('type_marketplace')) soonActions.push({icon:'📊',title:'Rekap Omzet Bulanan',desc:'Kumpulkan rekap penjualan dari semua kanal dan pisahkan dari pengeluaran pribadi.'});
+      if(tags.has('docs_high')) soonActions.push({icon:'🔍',title:'Periksa Silang Dokumen',desc:'Cocokkan data antar dokumen sebelum mengisi formulir resmi.'});
+      laterActions.push({icon:'📖',title:'Pelajari Panduan Coretax',desc:'Kenali dashboard, menu pelaporan, dan alur pengisian sebelum mulai submit.'});
+      if(tags.has('worry_high')) laterActions.push({icon:'🤝',title:'Pertimbangkan Bantuan Ahli',desc:'Untuk kasus kompleks, konsultasi dengan ahli pajak dapat menghemat waktu dan risiko.'});
+
+      if(urgentActions.length===0) soonActions.unshift({icon:'📋',title:'Siapkan Checklist Dokumen',desc:'Centang dokumen yang sudah siap menggunakan checklist interaktif di bawah.'});
+      const singleNextAction = urgentActions[0] || soonActions[0] || laterActions[0];
+
       main.innerHTML = `
-        <section class="result-grid" aria-labelledby="resultTitle">
+        <section style="display:grid;gap:20px">
+          <!-- HERO -->
+          <div class="result-hero">
+            <div class="rh-top">
+              <div class="rh-avatar">${avatarEmoji}</div>
+              <div class="rh-name">
+                <h1>Ringkasan Pajak ${escapeHTML(name)}</h1>
+                <p>${escapeHTML(path.profile)}</p>
+              </div>
+            </div>
+            <div class="rh-status-badge ${statusClass}">${statusIcon} ${statusText}</div>
+            <div class="rh-insight">${escapeHTML(insight)}</div>
+          </div>
+
+          <!-- SCORE GAUGES -->
           <div class="panel screen-card">
-            <span class="eyebrow">Hasil PanduCore</span>
-            <h1 class="screen-title" id="resultTitle">Ringkasan pajak untuk ${escapeHTML(appState.user.displayName || 'Anda')}</h1>
-            <p class="screen-lead">${languageCopy[currentLang()].resultNote}</p>
-            <div class="score-row">
-              ${scoreBox('Skor Kesiapan', appState.scores.readiness)}
-              ${scoreBox('Risiko Administratif', appState.scores.risk)}
-              ${scoreBox('Kelengkapan Dokumen', appState.scores.documentCompleteness)}
+            <div class="section-title" style="font-size:1.05rem;margin-bottom:16px">📊 Skor & Profil Pajak Anda</div>
+            <div class="gauge-grid" id="gaugeGrid">
+              ${renderGauge('Kesiapan',scores.readiness,'kesiapan')}
+              ${renderGauge('Risiko Admin.',scores.risk,'risiko')}
+              ${renderGauge('Kelengkapan Dok.',scores.documentCompleteness,'dokumen')}
+              ${renderGauge('Kebutuhan Literasi',scores.literacyNeed,'literasi')}
             </div>
-            <div class="tag-cloud">
-              <span class="badge badge-blue">${escapeHTML(appState.pathway.profile)}</span>
-              <span class="badge badge-gold">${escapeHTML(appState.pathway.main)}</span>
-              <span class="badge ${riskBadge}">Risiko ${riskLabel}</span>
+          </div>
+
+          <!-- PRIORITY ACTIONS + CALENDAR (2 col) -->
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px" class="result-two-col">
+            <!-- PRIORITY ACTIONS -->
+            <div class="panel screen-card">
+              <div class="section-title" style="font-size:1.05rem;margin-bottom:16px">🎯 Tindakan Prioritas</div>
+              <div class="action-next-box">
+                <div class="action-next-icon">${singleNextAction.icon}</div>
+                <div><h3>Langkah Paling Penting Sekarang</h3><p>${escapeHTML(singleNextAction.title)} — ${escapeHTML(singleNextAction.desc)}</p></div>
+              </div>
+              ${urgentActions.length>0?`<div class="action-tier-label">🔴 Lakukan Sekarang</div><div class="action-cards">${urgentActions.map(a=>`<div class="action-card urgent"><div class="action-card-icon">${a.icon}</div><div><h4>${escapeHTML(a.title)}</h4><p>${escapeHTML(a.desc)}</p></div></div>`).join('')}</div>`:''}
+              ${soonActions.length>0?`<div class="action-tier-label">🟡 Minggu Ini</div><div class="action-cards">${soonActions.map(a=>`<div class="action-card soon"><div class="action-card-icon">${a.icon}</div><div><h4>${escapeHTML(a.title)}</h4><p>${escapeHTML(a.desc)}</p></div></div>`).join('')}</div>`:''}
+              ${laterActions.length>0?`<div class="action-tier-label">🟢 Bisa Ditunda</div><div class="action-cards">${laterActions.map(a=>`<div class="action-card later"><div class="action-card-icon">${a.icon}</div><div><h4>${escapeHTML(a.title)}</h4><p>${escapeHTML(a.desc)}</p></div></div>`).join('')}</div>`:''}
             </div>
+
+            <!-- TAX CALENDAR -->
+            <div class="panel screen-card">
+              <div class="section-title" style="font-size:1.05rem;margin-bottom:16px">📅 Kalender Pajak</div>
+              <div class="cal-wrap" id="taxCal">${renderCalendar()}</div>
+            </div>
+          </div>
+
+          <!-- INTERACTIVE CHECKLIST -->
+          <div class="panel screen-card">
+            <div class="section-title" style="font-size:1.05rem;margin-bottom:16px">✅ Checklist Dokumen Interaktif</div>
+            <div id="checklistWrap">${renderChecklistHTML(checklist)}</div>
+          </div>
+
+          <!-- TAX ROADMAP -->
+          <div class="panel screen-card">
+            <div class="section-title" style="font-size:1.05rem;margin-bottom:16px">🗺️ Jalur Panduan Langkah demi Langkah</div>
+            <p class="hint" style="margin:0 0 18px">Klik langkah untuk menandai selesai. Ikuti urutan dari atas ke bawah.</p>
+            <div class="roadmap" id="roadmapWrap">${renderRoadmapHTML(guide)}</div>
+          </div>
+
+          <!-- COMMON MISTAKES & SECURITY (2 col) -->
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px" class="result-two-col">
+            <div class="panel screen-card">
+              <div class="section-title" style="font-size:1.05rem;margin-bottom:12px">⚠️ Kesalahan yang Perlu Dihindari</div>
+              <ul class="list">${commonMistakes().map(x=>`<li>${escapeHTML(x)}</li>`).join('')}</ul>
+            </div>
+            <div class="panel screen-card">
+              <div class="section-title" style="font-size:1.05rem;margin-bottom:12px">🔒 Catatan Keamanan</div>
+              <p>Jangan gunakan username atau password Coretax di PanduCore. PanduCore tidak pernah meminta password Coretax.</p>
+              <p class="hint">Untuk pelaporan resmi, gunakan kanal resmi dan simpan bukti pelaporan dengan aman.</p>
+            </div>
+          </div>
+
+          <!-- EXPORT ACTIONS -->
+          <div class="panel screen-card">
+            <div class="section-title" style="font-size:1.05rem;margin-bottom:14px">💾 Simpan & Bagikan Ringkasan</div>
             <div class="action-bar">
-              <button class="btn btn-primary" onclick="window.print()">Cetak hasil</button>
-              <button class="btn btn-gold" onclick="downloadJSON()">Unduh ringkasan</button>
-              <button class="btn btn-light" onclick="copySummary()">Salin ringkasan</button>
-              <button class="btn btn-light" onclick="setStep('questionnaire')">Ubah jawaban</button>
+              <button class="btn btn-primary" onclick="window.print()">🖨️ Cetak Hasil</button>
+              <button class="btn btn-gold" onclick="downloadJSON()">⬇️ Unduh Ringkasan</button>
+              <button class="btn btn-light" onclick="copySummaryWA()">📱 Salin untuk WhatsApp</button>
+              <button class="btn btn-light" onclick="setStep('questionnaire')">✏️ Ubah Jawaban</button>
             </div>
           </div>
-          <div class="result-card">
-            <h3>Profil Pajak Sementara</h3>
-            <p>${escapeHTML(appState.pathway.profile)} dengan jalur utama: <strong>${escapeHTML(appState.pathway.main)}</strong>.</p>
-            <p class="hint">Ringkasan ini dibuat dari jawaban yang Anda pilih, tanpa meminta data pribadi sensitif.</p>
-          </div>
-          <div class="result-card">
-            <h3>Rekomendasi Prioritas</h3>
-            <ul class="list">${appState.recommendations.map(x=>`<li>${escapeHTML(x)}</li>`).join('')}</ul>
-          </div>
-          <div class="result-card">
-            <h3>Checklist Dokumen</h3>
-            <ul class="list">${getChecklist().map(x=>`<li>${escapeHTML(x)}</li>`).join('')}</ul>
-          </div>
-          <div class="result-card" style="grid-column:1/-1">
-            <h3>Panduan Coretax Langkah demi Langkah</h3>
-            <p class="hint">Panduan ini dibuat mengikuti jalur jawaban Anda. Ikuti dari atas ke bawah agar proses tidak lompat dan dokumen tidak tercecer.</p>
-            <div class="steps">${guide.map(([a,b,c])=>`<div class="step"><div>${c ? `<small>${escapeHTML(c)}</small>` : ''}<strong>${escapeHTML(a)}</strong><span>${escapeHTML(b)}</span></div></div>`).join('')}</div>
-          </div>
-          <div class="result-card">
-            <h3>Kesalahan yang Perlu Dihindari</h3>
-            <ul class="list">${commonMistakes().map(x=>`<li>${escapeHTML(x)}</li>`).join('')}</ul>
-          </div>
-          <div class="result-card">
-            <h3>Catatan Keamanan</h3>
-            <p>Jangan gunakan username atau password yang sama dengan akun Coretax. PanduCore tidak pernah meminta password Coretax.</p>
-            <p class="hint">Untuk pelaporan resmi, gunakan kanal resmi dan simpan bukti pelaporan dengan aman.</p>
+
+          <!-- PREMIUM CONSULTATION BANNER -->
+          <div class="premium-banner">
+            <div class="premium-badge">✨ PREMIUM</div>
+            <h2>Butuh bantuan langsung dari ahli pajak?</h2>
+            <p>Konsultasi 1 jam eksklusif dengan konsultan pajak berpengalaman dan tersertifikasi. Dapatkan jawaban personal untuk situasi pajak Anda.</p>
+            <button class="btn-premium" onclick="setStep('consult_list')">Temukan Konsultan Pajak →</button>
           </div>
         </section>`;
+
+      // Animate gauges
+      setTimeout(()=>animateGauges(),100);
     }
+
+    function renderGauge(label,value,type){
+      const r=36,circ=2*Math.PI*r;
+      let color='#1559B7';
+      if(type==='risiko'){ color=value>=65?'#B42318':value>=40?'#B7791F':'#157347'; }
+      else{ color=value>=70?'#157347':value>=40?'#B7791F':'#B42318'; }
+      let ctx='';
+      if(type==='kesiapan') ctx=value>=70?'Lebih baik dari rata-rata':value>=40?'Perlu persiapan lanjut':'Perlu perhatian khusus';
+      else if(type==='risiko') ctx=value>=65?'Risiko tinggi':value>=40?'Risiko sedang':'Risiko rendah';
+      else if(type==='dokumen') ctx=value>=70?'Dokumen relatif lengkap':value>=40?'Ada dokumen yang kurang':'Dokumen perlu dilengkapi';
+      else ctx=value>=70?'Butuh pendalaman lebih':value>=40?'Cukup familiar':'Pemula — panduan lengkap tersedia';
+      return `<div class="gauge-wrap">
+        <div class="gauge-svg-wrap">
+          <svg class="gauge-svg" width="84" height="84" viewBox="0 0 84 84">
+            <circle class="gauge-bg" cx="42" cy="42" r="${r}"/>
+            <circle class="gauge-fill" id="g_${type}" cx="42" cy="42" r="${r}" stroke="${color}" stroke-dasharray="${circ}" stroke-dashoffset="${circ}" data-val="${value}" data-circ="${circ}"/>
+          </svg>
+          <div class="gauge-inner"><div class="gauge-num" id="gn_${type}">0</div><div class="gauge-pct">%</div></div>
+        </div>
+        <div class="gauge-lbl">${label}</div>
+        <div class="gauge-ctx">${ctx}</div>
+      </div>`;
+    }
+
+    function animateGauges(){
+      ['kesiapan','risiko','dokumen','literasi'].forEach(type=>{
+        const circle=document.getElementById('g_'+type);
+        const numEl=document.getElementById('gn_'+type);
+        if(!circle||!numEl) return;
+        const val=parseFloat(circle.dataset.val)||0;
+        const circ=parseFloat(circle.dataset.circ)||226;
+        const offset=circ-(val/100)*circ;
+        circle.style.strokeDashoffset=offset;
+        let current=0;
+        const step=val/60;
+        const interval=setInterval(()=>{
+          current=Math.min(current+step,val);
+          numEl.textContent=Math.round(current);
+          if(current>=val) clearInterval(interval);
+        },20);
+      });
+    }
+
+    function renderCalendar(){
+      const today=new Date();
+      const viewDate=appState.calMonth?new Date(appState.calMonth):new Date(today.getFullYear(),today.getMonth(),1);
+      const year=viewDate.getFullYear(),month=viewDate.getMonth();
+      const firstDay=new Date(year,month,1).getDay();
+      const daysInMonth=new Date(year,month+1,0).getDate();
+      const monthNames=['Januari','Februari','Maret','April','Mei','Juni','Juli','Agustus','September','Oktober','November','Desember'];
+      const dayNames=['Min','Sen','Sel','Rab','Kam','Jum','Sab'];
+      let calHTML=`<div class="cal-header-bar">
+        <button class="cal-nav" onclick="calNavigate(-1)" type="button">‹</button>
+        <h3>${monthNames[month]} ${year}</h3>
+        <button class="cal-nav" onclick="calNavigate(1)" type="button">›</button>
+      </div>
+      <div class="cal-weekdays">${dayNames.map(d=>`<span>${d}</span>`).join('')}</div>
+      <div class="cal-grid">`;
+      // Empty cells before first day
+      for(let i=0;i<firstDay;i++) calHTML+=`<div class="cal-day empty"></div>`;
+      for(let d=1;d<=daysInMonth;d++){
+        const isToday=today.getDate()===d&&today.getMonth()===month&&today.getFullYear()===year;
+        const evts=getEventsForDay(year,month,d);
+        let cls='cal-day';
+        if(isToday) cls+=' today';
+        if(evts.length>0){
+          cls+=' event';
+          const t=evts[0].type;
+          cls+=` event-${t}`;
+        }
+        calHTML+=`<div class="${cls}" title="${evts.map(e=>e.label).join(', ')}"><span class="cal-day-num">${d}</span>${evts.length>0?`<div class="cal-day-dot" style="background:${evts[0].type==='red'?'#B42318':evts[0].type==='gold'?'#B7791F':'#1559B7'}"></div>`:''}</div>`;
+      }
+      calHTML+=`</div>`;
+      // Upcoming events
+      const upcoming=getUpcomingEvents();
+      calHTML+=`<div class="cal-countdown-list">`;
+      upcoming.forEach(e=>{
+        const urgCls=e.diff<=7?'urgent':e.diff<=30?'soon':'ok';
+        const dayLabel=e.diff===0?'Hari ini':e.diff===1?'Besok':`${e.diff} hari lagi`;
+        calHTML+=`<div class="cal-countdown-item"><div class="cal-evt-icon">${e.icon}</div><div class="cal-evt-info"><strong>${e.label}</strong><span>${e.date.toLocaleDateString('id-ID',{day:'numeric',month:'long',year:'numeric'})}</span></div><div class="cal-evt-days ${urgCls}">${dayLabel}</div></div>`;
+      });
+      calHTML+=`</div>`;
+      return calHTML;
+    }
+
+    function calNavigate(dir){
+      const viewDate=appState.calMonth?new Date(appState.calMonth):new Date();
+      viewDate.setDate(1);
+      viewDate.setMonth(viewDate.getMonth()+dir);
+      appState.calMonth=viewDate.toISOString();
+      saveState();
+      const calEl=document.getElementById('taxCal');
+      if(calEl) calEl.innerHTML=renderCalendar();
+    }
+
+    function renderChecklistHTML(checklist){
+      const required=checklist.slice(0,3);
+      const optional=checklist.slice(3);
+      let done=0;
+      checklist.forEach((_,i)=>{ if(appState.checklist[i]) done++; });
+      let html=`<div class="checklist-progress"><div style="display:flex;justify-content:space-between;font-size:.88rem;color:var(--muted)"><span>${done} dari ${checklist.length} dokumen siap</span><span>${Math.round(done/Math.max(checklist.length,1)*100)}%</span></div><div class="checklist-pbar"><div class="checklist-pfill" style="width:${Math.round(done/Math.max(checklist.length,1)*100)}%"></div></div></div>`;
+      html+=`<div class="checklist-group-label">📋 Wajib</div><div class="checklist-items">`;
+      required.forEach((item,i)=>{
+        const isDone=!!appState.checklist[i];
+        html+=`<div class="cl-item${isDone?' done':''}" onclick="toggleChecklist(${i})" id="cli${i}"><div class="cl-checkbox">${isDone?'✓':''}</div><div class="cl-label">${escapeHTML(item)}</div><span class="cl-badge req">Wajib</span></div>`;
+      });
+      html+=`</div>`;
+      if(optional.length>0){
+        html+=`<div class="checklist-group-label">📁 Pendukung</div><div class="checklist-items">`;
+        optional.forEach((item,i)=>{
+          const idx=i+required.length;
+          const isDone=!!appState.checklist[idx];
+          html+=`<div class="cl-item${isDone?' done':''}" onclick="toggleChecklist(${idx})" id="cli${idx}"><div class="cl-checkbox">${isDone?'✓':''}</div><div class="cl-label">${escapeHTML(item)}</div><span class="cl-badge opt">Pendukung</span></div>`;
+        });
+        html+=`</div>`;
+      }
+      return html;
+    }
+
+    function toggleChecklist(idx){
+      appState.checklist[idx]=!appState.checklist[idx];
+      saveState();
+      const checklist=getChecklist();
+      const wrap=document.getElementById('checklistWrap');
+      if(wrap) wrap.innerHTML=renderChecklistHTML(checklist);
+    }
+
+    function renderRoadmapHTML(guide){
+      return guide.map(([title,desc,cat],i)=>{
+        const isDone=!!appState.roadmapDone[i];
+        const isNext=!isDone&&(i===0||appState.roadmapDone[i-1]);
+        const times=['~10 mnt','~15 mnt','~2–3 hari','~30 mnt','~1 jam','~2 hari','~20 mnt','~45 mnt','~1 hari','~30 mnt','~15 mnt','~2 mnt','~5 mnt','~10 mnt','~20 mnt','~30 mnt'];
+        const time=times[i%times.length];
+        return `<div class="rm-step${isDone?' done':isNext?' active':''}" onclick="toggleRoadmap(${i})" id="rm${i}">
+          <div class="rm-circle">${isDone?'✓':i+1}</div>
+          <div class="rm-meta">${cat?`<small>${escapeHTML(cat)}</small>`:''}<span class="rm-time">⏱ ${time}</span></div>
+          <strong>${escapeHTML(title)}</strong>
+          <span>${escapeHTML(desc)}</span>
+        </div>`;
+      }).join('');
+    }
+
+    function toggleRoadmap(idx){
+      appState.roadmapDone[idx]=!appState.roadmapDone[idx];
+      saveState();
+      const guide=getCoretaxGuide();
+      const wrap=document.getElementById('roadmapWrap');
+      if(wrap) wrap.innerHTML=renderRoadmapHTML(guide);
+    }
+
     function scoreBox(label,value){ return `<div class="score-box"><div class="score-value">${pct(value)}</div><div class="score-label">${label}</div><div class="meter"><span style="width:${pct(value)}%"></span></div></div>`; }
 
     function summaryObject(){ return { user: appState.user.displayName, settings: appState.settings, answers: appState.answers, workspace: appState.workspace, scores: appState.scores, pathway: appState.pathway, recommendations: appState.recommendations, checklist: getChecklist() }; }
@@ -1341,9 +1831,351 @@
       a.href = url; a.download = 'PanduCore-ringkasan.json'; a.click();
       URL.revokeObjectURL(url);
     }
+    function copySummaryWA(){
+      const s=appState.scores;
+      const text=`*Ringkasan Pajak PanduCore*\n━━━━━━━━━━━━━━━━━\n👤 ${appState.user.displayName||'Pengguna'} — ${appState.pathway.profile}\n📊 Kesiapan: ${s.readiness}% | Risiko: ${s.risk}% | Dokumen: ${s.documentCompleteness}%\n\n🎯 *Rekomendasi Prioritas:*\n${appState.recommendations.slice(0,3).map((r,i)=>`${i+1}. ${r}`).join('\n')}\n\nDibuat oleh PanduCore — Platform Panduan Pajak Digital`;
+      navigator.clipboard.writeText(text).then(()=>openInfoModal('Disalin! 📱','<p>Teks ringkasan sudah disalin. Paste langsung ke WhatsApp atau Telegram untuk dibagikan ke konsultan atau rekan Anda.</p>'));
+    }
     function copySummary(){
       const text = `PanduCore - ${appState.pathway.profile}\nJalur: ${appState.pathway.main}\nKesiapan: ${appState.scores.readiness}\nRisiko: ${appState.scores.risk}\nRekomendasi:\n- ${appState.recommendations.join('\n- ')}`;
       navigator.clipboard.writeText(text).then(()=>openInfoModal('Ringkasan disalin','<p>Ringkasan PanduCore sudah disalin ke clipboard.</p>'));
+    }
+
+    // ===== CONSULTATION FLOW =====
+    let _consultFilter='all';
+
+    function renderConsultList(){
+      const filtered=_consultFilter==='all'?consultants:consultants.filter(c=>c.scale===_consultFilter);
+      const filterBtns=[
+        {key:'all',label:'Semua'},
+        {key:'personal',label:'Pribadi / UMKM Kecil'},
+        {key:'umkm',label:'UMKM Menengah'},
+        {key:'corporate',label:'Korporat'}
+      ];
+      main.innerHTML=`
+        <section>
+          <div class="consult-header">
+            <button class="btn btn-light" onclick="setStep('result')" style="flex-shrink:0">← Kembali</button>
+            <h1>Pilih Konsultan Pajak</h1>
+          </div>
+          <div class="info-box" style="margin-bottom:18px"><div class="box-icon">✨</div><div>Konsultasi 1 jam langsung dengan konsultan berpengalaman. Sesi dimulai segera setelah pembayaran dikonfirmasi.</div></div>
+          <div class="filter-bar">${filterBtns.map(f=>`<button class="filter-btn${_consultFilter===f.key?' active':''}" onclick="filterConsultants('${f.key}')">${f.label}</button>`).join('')}</div>
+          <div class="expert-grid">${filtered.map(c=>`
+            <div class="expert-card${c.featured?' featured':''}">
+              <img class="expert-avatar" src="${c.photo}" alt="${escapeHTML(c.name)}" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+              <div style="display:none;width:72px;height:72px;border-radius:50%;background:var(--navy);color:#fff;align-items:center;justify-content:center;font-size:1.4rem;margin-bottom:12px">${c.name.charAt(0)}</div>
+              <div class="expert-name">${escapeHTML(c.name)}</div>
+              <div class="expert-title">${escapeHTML(c.title)}</div>
+              <div class="expert-tags">${c.tags.map(t=>`<span class="expert-tag">${t}</span>`).join('')}</div>
+              <div class="expert-stats"><div>⭐ <span>${c.rating}</span></div><div>💬 <span>${c.sessions}</span> sesi</div></div>
+              <div class="expert-price">Rp ${c.price.toLocaleString('id-ID')} <small>/ sesi 1 jam</small></div>
+              <p style="font-size:.82rem;color:var(--muted);margin:0 0 14px;line-height:1.4">${escapeHTML(c.bio)}</p>
+              <button class="btn-choose" onclick="selectConsultant(${c.id})">Pilih Konsultan</button>
+            </div>`).join('')}
+          </div>
+        </section>`;
+    }
+
+    function filterConsultants(key){
+      _consultFilter=key;
+      renderConsultList();
+    }
+
+    function selectConsultant(id){
+      appState.consult.selectedExpert=consultants.find(c=>c.id===id)||null;
+      appState.consult.paymentMethod=null;
+      saveState();
+      setStep('consult_pay');
+    }
+
+    function renderConsultPay(){
+      const expert=appState.consult.selectedExpert;
+      if(!expert){setStep('consult_list');return;}
+      const methods=[
+        {key:'bca',icon:'🏦',name:'Transfer Bank BCA'},
+        {key:'mandiri',icon:'🏦',name:'Transfer Bank Mandiri'},
+        {key:'qris',icon:'📱',name:'QRIS'},
+        {key:'va_bri',icon:'🏦',name:'Virtual Account BRI'},
+        {key:'gopay',icon:'💚',name:'GoPay'},
+        {key:'ovo',icon:'💜',name:'OVO'},
+        {key:'dana',icon:'💙',name:'DANA'}
+      ];
+      const selected=appState.consult.paymentMethod||'qris';
+      const platformFee=5000;
+      const total=expert.price+platformFee;
+      main.innerHTML=`
+        <section>
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:20px;flex-wrap:wrap">
+            <button class="btn btn-light" onclick="setStep('consult_list')">← Kembali</button>
+            <h1 style="margin:0;color:var(--navy);font-size:1.5rem">Konfirmasi Pembayaran</h1>
+          </div>
+          <div class="pay-layout">
+            <div class="pay-card">
+              <h2>Detail Sesi</h2>
+              <div class="pay-expert-row">
+                <img src="${expert.photo}" alt="" style="width:54px;height:54px;border-radius:50%;object-fit:cover" onerror="this.style.display='none'">
+                <div><strong>${escapeHTML(expert.name)}</strong><span>${escapeHTML(expert.title)}</span><br><span style="color:var(--blue);font-size:.82rem">1 Jam Sesi Konsultasi</span></div>
+              </div>
+              <h2>Metode Pembayaran</h2>
+              <div class="pay-methods">${methods.map(m=>`
+                <label class="pay-method${selected===m.key?' selected':''}" onclick="selectPayMethod('${m.key}')">
+                  <div class="pay-method-icon">${m.icon}</div>
+                  <div class="pay-method-name">${m.name}</div>
+                  <input type="radio" name="payMethod" value="${m.key}" ${selected===m.key?'checked':''} style="accent-color:var(--blue)">
+                </label>`).join('')}
+              </div>
+            </div>
+            <div>
+              <div class="pay-card pay-summary">
+                <h2 style="font-size:1.1rem">Ringkasan Pesanan</h2>
+                <div class="pay-row"><span>Biaya Konsultasi (1 Jam)</span><span>Rp ${expert.price.toLocaleString('id-ID')}</span></div>
+                <div class="pay-row"><span>Biaya Platform</span><span>Rp ${platformFee.toLocaleString('id-ID')}</span></div>
+                <div class="pay-row total"><span>Total</span><span>Rp ${total.toLocaleString('id-ID')}</span></div>
+              </div>
+              <button class="btn btn-gold btn-full" style="margin-top:14px;padding:16px;font-size:1rem" onclick="confirmPayment()">💳 Bayar Sekarang</button>
+              <p style="text-align:center;font-size:.78rem;color:var(--muted);margin-top:8px">Sesi dimulai segera setelah pembayaran terverifikasi</p>
+            </div>
+          </div>
+        </section>`;
+    }
+
+    function selectPayMethod(key){
+      appState.consult.paymentMethod=key;
+      saveState();
+      renderConsultPay();
+    }
+
+    function confirmPayment(){
+      showAILoading(
+        'Memverifikasi pembayaran…',
+        'Transaksi Anda sedang diproses. Mohon tunggu sebentar.',
+        [{icon:'💳',text:'Memverifikasi metode pembayaran'},{icon:'🔐',text:'Mengamankan transaksi'},{icon:'✅',text:'Menghubungkan ke konsultan'}],
+        2000,
+        ()=>{
+          appState.consult.sessionStartTime=Date.now();
+          appState.consult.messages=[];
+          const expert=appState.consult.selectedExpert;
+          const userName=appState.user.displayName||'Anda';
+          const profile=appState.pathway?appState.pathway.profile:'wajib pajak';
+          appState.consult.messages.push({
+            from:'consultant',
+            text:\`Halo ${userName}! Saya ${expert.name}. Senang bisa membantu Anda hari ini. 😊\`,
+            time:new Date().toLocaleTimeString('id-ID',{hour:'2-digit',minute:'2-digit'})
+          });
+          setTimeout(()=>{
+            appState.consult.messages.push({
+              from:'consultant',
+              text:\`Dari profil PanduCore Anda, saya lihat Anda adalah ${profile}. Apa pertanyaan atau kendala utama yang ingin kita bahas dalam sesi ini?\`,
+              time:new Date().toLocaleTimeString('id-ID',{hour:'2-digit',minute:'2-digit'})
+            });
+            saveState();
+            if(document.getElementById('chatMessages')) appendChatMessage(appState.consult.messages[appState.consult.messages.length-1]);
+          },2000);
+          saveState();
+          setStep('consult_chat');
+        }
+      );
+    }
+
+    let _chatTimer=null;
+
+    function renderConsultChat(){
+      const expert=appState.consult.selectedExpert;
+      if(!expert){setStep('consult_list');return;}
+      const userName=appState.user.displayName||'U';
+      const quickReplies=[
+        'Dokumen apa yang saya perlukan?',
+        'Cara lapor SPT pertama kali?',
+        'Apakah saya kena PPh Final?',
+        'Bagaimana cara isi Coretax?',
+        'Apa beda PPh 21 dan PPh 25?',
+        'Apakah omzet saya kena PPN?'
+      ];
+      main.innerHTML=\`
+        <div class="chat-shell">
+          <div class="chat-header">
+            <img class="chat-header-avatar" src="\${expert.photo}" alt="" onerror="this.src=''">
+            <div class="chat-header-info">
+              <p class="chat-header-name">\${escapeHTML(expert.name)}</p>
+              <span class="chat-header-status"><span class="chat-online-dot"></span> Online — Sesi Konsultasi Aktif</span>
+            </div>
+            <div class="chat-timer-wrap">⏱ <span class="chat-timer" id="chatTimerDisplay">60:00</span></div>
+            <button class="mini-btn" style="margin-left:8px;background:rgba(255,255,255,.15);color:#fff;border-color:rgba(255,255,255,.3)" onclick="endSession()">Akhiri Sesi</button>
+          </div>
+          <div class="chat-messages" id="chatMessages">
+            \${appState.consult.messages.map(m=>chatBubbleHTML(m,userName)).join('')}
+          </div>
+          <div class="chat-quick-replies">
+            \${quickReplies.map(q=>\`<button class="quick-reply-chip" onclick="sendQuickReply('\${escapeHTML(q)}')" type="button">\${escapeHTML(q)}</button>\`).join('')}
+          </div>
+          <div class="chat-input-bar">
+            <button class="chat-attach-btn" title="Lampiran" type="button">📎</button>
+            <textarea class="chat-input" id="chatInput" placeholder="Ketik pertanyaan Anda…" rows="1" onkeydown="if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();sendMessage()}"></textarea>
+            <button class="chat-send-btn" onclick="sendMessage()" type="button"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22,2 15,22 11,13 2,9"/></svg></button>
+          </div>
+        </div>\`;
+
+      // Start/resume timer
+      startChatTimer();
+      // Scroll to bottom
+      setTimeout(()=>{ const msgs=document.getElementById('chatMessages'); if(msgs) msgs.scrollTop=msgs.scrollHeight; },100);
+    }
+
+    function chatBubbleHTML(msg,userName){
+      const isUser=msg.from==='user';
+      return \`<div class="msg-row\${isUser?' user':''}">
+        \${isUser?\`<div class="msg-avatar-user">\${(userName||'U').charAt(0).toUpperCase()}</div>\`:\`<img class="msg-avatar-small" src="\${appState.consult.selectedExpert?appState.consult.selectedExpert.photo:''}" alt="" onerror="this.style.display='none'">\`}
+        <div><div class="msg-bubble \${isUser?'user':'consultant'}">\${msg.text}</div><span class="msg-time">\${msg.time}</span></div>
+      </div>\`;
+    }
+
+    function appendChatMessage(msg){
+      const msgs=document.getElementById('chatMessages');
+      if(!msgs) return;
+      const userName=appState.user.displayName||'U';
+      const div=document.createElement('div');
+      div.innerHTML=chatBubbleHTML(msg,userName);
+      msgs.appendChild(div.firstElementChild);
+      msgs.scrollTop=msgs.scrollHeight;
+    }
+
+    function removeTypingIndicator(){
+      const ti=document.getElementById('typingIndicator');
+      if(ti) ti.remove();
+    }
+
+    function showTypingIndicator(){
+      const msgs=document.getElementById('chatMessages');
+      if(!msgs) return;
+      removeTypingIndicator();
+      const div=document.createElement('div');
+      div.id='typingIndicator';
+      div.className='msg-row';
+      div.innerHTML=\`<img class="msg-avatar-small" src="\${appState.consult.selectedExpert?appState.consult.selectedExpert.photo:''}" alt="" onerror="this.style.display='none'"><div class="msg-typing"><span></span><span></span><span></span></div>\`;
+      msgs.appendChild(div);
+      msgs.scrollTop=msgs.scrollHeight;
+    }
+
+    const botReplies={
+      'dokumen':[
+        'Untuk {profile}, dokumen utama yang perlu disiapkan adalah: bukti potong (jika ada), rekap penghasilan selama setahun, dan catatan pengeluaran usaha jika relevan.',
+        'Dokumen yang paling sering terlupakan adalah bukti potong dari pemberi kerja atau klien. Pastikan Anda sudah memintanya.',
+        'Saya sarankan membuat folder khusus untuk dokumen pajak. Pisahkan berdasarkan sumber penghasilan agar lebih mudah saat pengisian.'
+      ],
+      'spt':[
+        'Untuk lapor SPT pertama kali, langkah pertamanya adalah pastikan akun Coretax Anda aktif. Jika belum pernah login, lakukan verifikasi profil dulu.',
+        'Setelah akun aktif, pilih menu SPT sesuai tahun pajak yang ingin dilaporkan. Ikuti panduan yang tersedia di halaman tersebut.',
+        'Jangan terburu-buru menekan tombol kirim. Review dulu semua angka, pastikan sesuai dengan dokumen yang Anda punya.'
+      ],
+      'pph':[
+        'PPh Final 0,5% berlaku untuk UMKM dengan omzet di bawah Rp 4,8 miliar per tahun. Ini dihitung dari omzet bruto, bukan keuntungan.',
+        'PPh Pasal 21 adalah pajak yang dipotong oleh pemberi kerja dari gaji karyawan. Jika Anda karyawan, biasanya sudah dipotong otomatis.',
+        'PPh Pasal 25 adalah cicilan pajak penghasilan yang dibayar sendiri setiap bulan, biasanya untuk pengusaha atau freelancer.'
+      ],
+      'coretax':[
+        'Coretax adalah sistem administrasi pajak DJP terbaru. Untuk masuk, gunakan NPWP/NIK dan kata sandi yang sudah Anda daftarkan di sistem resmi.',
+        'Jika baru pertama menggunakan Coretax, mulai dari menu Profil untuk memastikan data Anda sudah benar sebelum melanjutkan ke pelaporan.',
+        'Jika mengalami error saat login, coba clear cache browser dan gunakan mode incognito. Jika masih gagal, gunakan jalur reset password resmi.'
+      ],
+      'ppn':[
+        'PPN dikenakan jika omzet usaha Anda melebihi Rp 4,8 miliar dalam setahun. Di bawah itu, Anda tidak diwajibkan menjadi PKP.',
+        'Jika sudah menjadi PKP, Anda wajib memungut PPN 11% dari transaksi dan melaporkan SPT Masa PPN setiap bulan paling lambat tanggal 25.',
+        'Untuk UMKM kecil yang belum PKP, fokus dulu pada PPh Final dan SPT Tahunan. PPN belum jadi kewajiban Anda.'
+      ],
+      'default':[
+        'Pertanyaan yang bagus! Berdasarkan profil pajak Anda, saya sarankan untuk memastikan dokumen dasar sudah lengkap terlebih dahulu sebelum mengisi formulir apapun.',
+        'Untuk situasi seperti ini, langkah paling aman adalah memeriksa kondisi secara spesifik. Bisa ceritakan lebih detail situasinya?',
+        'Saya mengerti. Hal ini memang sering membingungkan bagi banyak wajib pajak. Mari kita urai satu per satu agar lebih jelas.',
+        'Pertanyaan Anda sangat relevan. Ini adalah hal yang perlu diperhatikan dengan seksama sesuai kondisi masing-masing wajib pajak.',
+        'Baik, berdasarkan informasi yang Anda berikan, ada beberapa hal yang perlu kita perhatikan. Izinkan saya menjelaskan secara bertahap.'
+      ]
+    };
+
+    function getAutoReply(text){
+      const lower=text.toLowerCase();
+      const profile=appState.pathway?appState.pathway.profile:'wajib pajak';
+      let pool=botReplies.default;
+      if(lower.includes('dokumen')||lower.includes('bukti')||lower.includes('berkas')) pool=botReplies.dokumen;
+      else if(lower.includes('spt')||lower.includes('lapor')||lower.includes('pertama')) pool=botReplies.spt;
+      else if(lower.includes('pph')||lower.includes('pajak penghasilan')||lower.includes('final')||lower.includes('21')||lower.includes('25')) pool=botReplies.pph;
+      else if(lower.includes('coretax')||lower.includes('login')||lower.includes('akun')||lower.includes('sistem')) pool=botReplies.coretax;
+      else if(lower.includes('ppn')||lower.includes('pkp')||lower.includes('faktur')) pool=botReplies.ppn;
+      const reply=pool[Math.floor(Math.random()*pool.length)];
+      return reply.replace('{profile}',profile);
+    }
+
+    function sendQuickReply(text){
+      const input=document.getElementById('chatInput');
+      if(input) input.value=text;
+      sendMessage();
+    }
+
+    function sendMessage(){
+      const input=document.getElementById('chatInput');
+      if(!input) return;
+      const text=input.value.trim();
+      if(!text) return;
+      input.value='';
+      const time=new Date().toLocaleTimeString('id-ID',{hour:'2-digit',minute:'2-digit'});
+      const userMsg={from:'user',text,time};
+      appState.consult.messages.push(userMsg);
+      saveState();
+      appendChatMessage(userMsg);
+      showTypingIndicator();
+      const delay=1500+Math.random()*2000;
+      setTimeout(()=>{
+        removeTypingIndicator();
+        const replyText=getAutoReply(text);
+        const replyMsg={from:'consultant',text:replyText,time:new Date().toLocaleTimeString('id-ID',{hour:'2-digit',minute:'2-digit'})};
+        appState.consult.messages.push(replyMsg);
+        saveState();
+        appendChatMessage(replyMsg);
+      },delay);
+    }
+
+    function startChatTimer(){
+      if(_chatTimer) clearInterval(_chatTimer);
+      const totalSecs=60*60;
+      function update(){
+        const elapsed=Math.floor((Date.now()-(appState.consult.sessionStartTime||Date.now()))/1000);
+        const remaining=Math.max(0,totalSecs-elapsed);
+        const m=Math.floor(remaining/60),s=remaining%60;
+        const timerEl=document.getElementById('chatTimerDisplay');
+        if(!timerEl){clearInterval(_chatTimer);return;}
+        timerEl.textContent=\`\${String(m).padStart(2,'0')}:\${String(s).padStart(2,'0')}\`;
+        if(remaining<=600) timerEl.classList.add('urgent');
+        if(remaining===0){clearInterval(_chatTimer);showSessionEndModal();}
+      }
+      update();
+      _chatTimer=setInterval(update,1000);
+    }
+
+    function showSessionEndModal(){
+      const expert=appState.consult.selectedExpert;
+      openInfoModal('Sesi Konsultasi Selesai ✅',`
+        <div style="text-align:center;padding:8px">
+          <p style="font-size:1rem">Sesi 1 jam dengan <strong>\${expert?escapeHTML(expert.name):''}</strong> telah selesai.</p>
+          <p style="color:var(--muted);font-size:.9rem">Terima kasih telah menggunakan layanan konsultasi PanduCore!</p>
+          <div style="margin:18px 0">
+            <p style="font-weight:750;margin-bottom:10px">Beri penilaian untuk konsultan ini:</p>
+            <div class="stars-wrap" id="starsWrap">\${[1,2,3,4,5].map(i=>\`<span class="star-btn" onclick="rateConsultant(\${i})" data-star="\${i}">⭐</span>\`).join('')}</div>
+          </div>
+          <button class="btn btn-primary btn-full" onclick="endSession()" style="margin-top:8px">Kembali ke Hasil PanduCore</button>
+        </div>`);
+    }
+
+    function rateConsultant(stars){
+      appState.consult.rating=stars;
+      saveState();
+      document.querySelectorAll('.star-btn').forEach((el,i)=>{
+        el.classList.toggle('active',i<stars);
+      });
+    }
+
+    function endSession(){
+      if(_chatTimer) clearInterval(_chatTimer);
+      modalBackdrop.classList.remove('open');
+      setStep('result');
     }
 
     function openInfoModal(title, html){ modalTitle.textContent = title; modalBody.innerHTML = html; modalBackdrop.classList.add('open'); }

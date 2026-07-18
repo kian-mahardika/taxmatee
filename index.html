@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="id">
 <head>
   <meta charset="utf-8" />
@@ -228,21 +228,146 @@
     body.mobile-mode .hero-notes{grid-template-columns:1fr}
     body.mobile-mode .choice-grid{grid-template-columns:1fr}
     body.mobile-mode .question-card{min-height:calc(100vh - 230px)}
+    body.mobile-mode .score-row{grid-template-columns:1fr 1fr}
+    body.mobile-mode .hero-card{padding:22px}
+    body.mobile-mode .screen-card{padding:18px}
+    body.mobile-mode .topbar-inner{flex-direction:row;flex-wrap:wrap;align-items:center;padding:10px 16px}
+    body.mobile-mode .brand{min-width:0}
+    body.mobile-mode .header-actions{flex-wrap:wrap;gap:6px}
+    body.mobile-mode .hero-title{font-size:clamp(1.6rem,6vw,2.8rem)}
+    body.mobile-mode .result-grid{gap:14px}
+    body.mobile-mode .mini-btn{font-size:.8rem;padding:7px 10px}
+    body.mobile-mode .btn{padding:11px 14px;font-size:.9rem}
 
     @media(max-width:860px){
-      .topbar-inner{align-items:flex-start;flex-direction:column}
-      .header-actions{justify-content:flex-start}
-        .logo-box{width:215px;height:68px}
-      .logo-box img{width:215px;height:68px}
+      .topbar-inner{align-items:flex-start;flex-direction:column;padding:10px 16px}
+      .header-actions{justify-content:flex-start;gap:8px}
+      .logo-box{width:175px;height:56px}
+      .logo-box img{width:175px;height:56px}
       .hero-grid,.result-grid,.workspace-grid,.question-shell{grid-template-columns:1fr}
-      .side-panel{position:relative;top:auto}
+      .side-panel{position:relative;top:auto;display:none}
       .choice-grid{grid-template-columns:1fr}
-      .hero-card{padding:28px}
+      .hero-card{padding:20px}
+      .hero-notes,.score-row{grid-template-columns:1fr 1fr}
+      .container{padding:18px 14px 40px}
+      .screen-card{padding:18px}
+      .hero-title{font-size:clamp(1.8rem,5vw,3rem)}
+      .result-grid{gap:14px}
+      .question-card{padding:20px;min-height:auto}
+      .workspace-grid{grid-template-columns:1fr}
+    }
+    @media(max-width:480px){
+      .topbar-inner{padding:8px 12px}
+      .logo-box{width:140px;height:44px}
+      .logo-box img{width:140px;height:44px}
       .hero-notes,.score-row{grid-template-columns:1fr}
+      .status-pill{display:none}
+      .hero-card{padding:16px}
+      .screen-card{padding:14px}
+      .container{padding:12px 10px 32px}
+      .btn{padding:10px 12px;font-size:.88rem}
+      .question-title{font-size:1.3rem}
+      .choice-grid{gap:10px}
+      .hero-actions{gap:8px}
     }
 
+    /* === AI LOADING OVERLAY === */
+    .ai-loading-overlay{
+      position:fixed;inset:0;z-index:9999;
+      background:rgba(7,27,51,.72);
+      display:flex;flex-direction:column;align-items:center;justify-content:center;
+      gap:28px;
+      backdrop-filter:blur(6px);
+      -webkit-backdrop-filter:blur(6px);
+      animation:fadeInOverlay .25s ease;
+    }
+    @keyframes fadeInOverlay{from{opacity:0}to{opacity:1}}
+    .ai-loading-box{
+      background:#fff;
+      border-radius:24px;
+      padding:36px 44px;
+      text-align:center;
+      max-width:380px;
+      width:90%;
+      box-shadow:0 24px 60px rgba(7,27,51,.22);
+      animation:slideUpBox .3s cubic-bezier(.34,1.56,.64,1);
+    }
+    @keyframes slideUpBox{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+    .ai-brain-icon{
+      width:64px;height:64px;
+      margin:0 auto 18px;
+      position:relative;
+    }
+    .ai-brain-ring{
+      position:absolute;inset:0;
+      border:3px solid transparent;
+      border-radius:50%;
+      border-top-color:var(--blue);
+      border-right-color:var(--gold);
+      animation:spinRing 1.1s linear infinite;
+    }
+    .ai-brain-ring:nth-child(2){
+      inset:8px;
+      border-top-color:var(--gold);
+      border-right-color:var(--blue);
+      animation-duration:1.7s;
+      animation-direction:reverse;
+    }
+    .ai-brain-ring:nth-child(3){
+      inset:16px;
+      border-top-color:#4f7bf7;
+      animation-duration:2.3s;
+    }
+    @keyframes spinRing{to{transform:rotate(360deg)}}
+    .ai-brain-dot{
+      position:absolute;
+      top:50%;left:50%;
+      transform:translate(-50%,-50%);
+      width:16px;height:16px;
+      background:var(--navy);
+      border-radius:50%;
+      animation:pulseDot 1.2s ease-in-out infinite;
+    }
+    @keyframes pulseDot{0%,100%{transform:translate(-50%,-50%) scale(1)}50%{transform:translate(-50%,-50%) scale(1.3)}}
+    .ai-loading-title{
+      font-size:1.15rem;font-weight:850;color:var(--navy);margin:0 0 8px;
+    }
+    .ai-loading-desc{
+      color:var(--muted);font-size:.92rem;margin:0 0 20px;
+      line-height:1.5;
+    }
+    .ai-typing-dots{
+      display:flex;align-items:center;justify-content:center;gap:6px;
+    }
+    .ai-typing-dots span{
+      width:10px;height:10px;border-radius:50%;
+      background:var(--gold);
+      animation:bounceDot .9s ease-in-out infinite;
+    }
+    .ai-typing-dots span:nth-child(2){background:var(--blue);animation-delay:.18s}
+    .ai-typing-dots span:nth-child(3){background:#4f7bf7;animation-delay:.36s}
+    @keyframes bounceDot{0%,80%,100%{transform:scale(0.7);opacity:.5}40%{transform:scale(1.1);opacity:1}}
+    .ai-steps-mini{
+      display:flex;flex-direction:column;gap:8px;margin:16px 0 0;text-align:left;
+    }
+    .ai-step-item{
+      display:flex;align-items:center;gap:10px;
+      color:#4B5F78;font-size:.88rem;
+      opacity:0;
+      animation:fadeStep .4s ease forwards;
+    }
+    .ai-step-item:nth-child(1){animation-delay:.3s}
+    .ai-step-item:nth-child(2){animation-delay:.8s}
+    .ai-step-item:nth-child(3){animation-delay:1.3s}
+    .ai-step-icon{
+      width:22px;height:22px;border-radius:8px;
+      background:var(--surface-3);display:grid;place-items:center;
+      font-size:.82rem;flex-shrink:0;
+    }
+    @keyframes fadeStep{from{opacity:0;transform:translateX(-8px)}to{opacity:1;transform:translateX(0)}}
+
     @media print{
-      .topbar,.progress-wrap,.footer,.action-bar,.question-footer,.side-panel{display:none!important}
+      .topbar,.progress-wrap,.footer,.action-bar,.question-footer,.side-panel,.ai-loading-overlay{display:none!important}
       body{background:#fff}
       .container{max-width:100%;padding:0}
       .panel,.result-card{box-shadow:none;border:1px solid #ddd}
@@ -813,6 +938,33 @@
         </section>`;
     }
 
+    function showAILoading(title, desc, steps, durationMs, callback){
+      const overlay = document.createElement('div');
+      overlay.className = 'ai-loading-overlay';
+      overlay.setAttribute('aria-live','polite');
+      overlay.setAttribute('role','status');
+      const stepsHTML = steps.map(s => `<div class="ai-step-item"><div class="ai-step-icon">${s.icon}</div><span>${s.text}</span></div>`).join('');
+      overlay.innerHTML = `
+        <div class="ai-loading-box">
+          <div class="ai-brain-icon">
+            <div class="ai-brain-ring"></div>
+            <div class="ai-brain-ring"></div>
+            <div class="ai-brain-ring"></div>
+            <div class="ai-brain-dot"></div>
+          </div>
+          <p class="ai-loading-title">${title}</p>
+          <p class="ai-loading-desc">${desc}</p>
+          <div class="ai-typing-dots"><span></span><span></span><span></span></div>
+          <div class="ai-steps-mini">${stepsHTML}</div>
+        </div>`;
+      document.body.appendChild(overlay);
+      setTimeout(() => {
+        overlay.style.transition = 'opacity .3s ease';
+        overlay.style.opacity = '0';
+        setTimeout(() => { overlay.remove(); callback(); }, 320);
+      }, durationMs);
+    }
+
     function handleLogin(){
       const name = document.getElementById('displayName').value.trim();
       const pass = document.getElementById('localPassword').value.trim();
@@ -826,7 +978,17 @@
       appState.user.displayName = name;
       appState.user.loginConfirmed = true;
       saveState();
-      setStep('security');
+      showAILoading(
+        'Menyiapkan sesi Anda…',
+        `Halo, <strong>${name}</strong>! PanduCore sedang memuat profil dan menyiapkan panduan khusus untuk Anda.`,
+        [
+          {icon:'🔐', text:'Memverifikasi keamanan sesi'},
+          {icon:'🧠', text:'Memuat modul panduan pajak'},
+          {icon:'✅', text:'Sesi siap — mengarahkan Anda'}
+        ],
+        2200,
+        () => setStep('security')
+      );
     }
 
     function renderSecurity(){
@@ -953,7 +1115,23 @@
       if(!appState.answers[q.id]){ document.getElementById('questionError').textContent = 'Pilih satu jawaban terlebih dahulu.'; return; }
       appState.questionIndex += 1;
       saveState();
-      if(appState.questionIndex >= visibleQuestions().length){ setStep(appState.answers.workspace_need === 'yes' ? 'workspace' : 'result'); } else renderQuestionnaire();
+      const isLast = appState.questionIndex >= visibleQuestions().length;
+      if(isLast){
+        const nextStep = appState.answers.workspace_need === 'yes' ? 'workspace' : 'result';
+        showAILoading(
+          'AI sedang menganalisis jawaban Anda…',
+          'PanduCore memproses semua jawaban untuk menyusun jalur pajak, skor kesiapan, dan rekomendasi personal.',
+          [
+            {icon:'📊', text:'Menganalisis pola jawaban'},
+            {icon:'🗺️', text:'Menyusun jalur pajak personal'},
+            {icon:'🎯', text:'Menghasilkan rekomendasi prioritas'}
+          ],
+          2800,
+          () => setStep(nextStep)
+        );
+      } else {
+        renderQuestionnaire();
+      }
     }
     function prevQuestion(){
       if(appState.questionIndex <= 0){ setStep('npwp'); return; }
@@ -985,7 +1163,18 @@
     }
     function saveWorkspaceAndResult(){
       ['salaryRange','businessRange','freelanceRange','incomeSources','hasSlip','hasSalesRecord','hasExpenseRecord','hasPreviousProof'].forEach(id => appState.workspace[id] = document.getElementById(id).value);
-      saveState(); setStep('result');
+      saveState();
+      showAILoading(
+        'AI sedang menyempurnakan hasil Anda…',
+        'Data ruang persiapan telah diterima. PanduCore sedang menggabungkan semua informasi untuk menghasilkan laporan lengkap.',
+        [
+          {icon:'📝', text:'Memproses data dokumen & penghasilan'},
+          {icon:'⚙️', text:'Menghitung skor kesiapan & risiko'},
+          {icon:'📋', text:'Menyusun hasil dan panduan lengkap'}
+        ],
+        2500,
+        () => setStep('result')
+      );
     }
 
     function collectTagsAndScores(){

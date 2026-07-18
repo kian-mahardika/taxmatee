@@ -777,6 +777,218 @@
       border-top: 4px solid var(--blue) !important;
     }
 
+  
+    /* === CORETAX STYLE OVERHAUL === */
+    /* Hide topbar dynamically when the hero section exists */
+    body:has(.hero-coretax) .topbar { display: none !important; }
+    
+    body:has(.hero-coretax) {
+      background: linear-gradient(135deg, #0b1d3a 0%, #173f75 100%) !important;
+    }
+
+    .hero-coretax {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 60px 40px;
+      align-items: center;
+      min-height: 90vh;
+      animation: fadeInUp 0.5s ease-out forwards;
+    }
+
+    .hero-brand {
+      margin-bottom: 40px;
+    }
+    .hero-brand .brand-text {
+      font-size: 2.4rem;
+      font-weight: 900;
+      letter-spacing: -0.5px;
+      color: #F5B700;
+    }
+
+    .hero-coretax .hero-title {
+      font-size: clamp(2.5rem, 4vw, 3.8rem);
+      font-weight: 850;
+      line-height: 1.15;
+      margin-bottom: 24px;
+      color: #fff;
+    }
+
+    .hero-coretax .hero-subtitle {
+      font-size: 1.15rem;
+      line-height: 1.6;
+      color: rgba(255,255,255,0.85);
+      margin-bottom: 48px;
+      max-width: 90%;
+    }
+
+    .btn-cta {
+      background: #4667d4; /* A vivid blue/indigo that pops */
+      background: linear-gradient(135deg, #4b6de0, #3855b3);
+      color: #fff;
+      font-size: 1.1rem;
+      padding: 16px 32px;
+      border-radius: 999px;
+      font-weight: 800;
+      border: 1px solid rgba(255,255,255,0.2);
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      cursor: pointer;
+      box-shadow: 0 8px 24px rgba(56, 85, 179, 0.4);
+      transition: all 0.3s ease;
+    }
+    .btn-cta:hover {
+      transform: translateY(-2px) scale(1.02);
+      box-shadow: 0 12px 32px rgba(56, 85, 179, 0.6);
+      background: linear-gradient(135deg, #5377f0, #3e5ec7);
+    }
+    .btn-cta:active {
+      transform: translateY(1px);
+    }
+    
+    .pulse-idle {
+      animation: pulse-glow 2.5s infinite cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    @keyframes pulse-glow {
+      0% { box-shadow: 0 0 0 0 rgba(75, 109, 224, 0.7); }
+      70% { box-shadow: 0 0 0 20px rgba(75, 109, 224, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(75, 109, 224, 0); }
+    }
+
+    /* RIGHT COLUMN CARDS */
+    .hero-right {
+      position: relative;
+      width: 100%;
+      height: 650px;
+      perspective: 1500px; /* Enable 3D space */
+    }
+
+    .coretax-card {
+      background: #ffffff;
+      border-radius: 24px;
+      padding: 32px;
+      color: #071B33;
+      width: 420px;
+      box-shadow: 0 24px 60px rgba(0,0,0,0.4);
+      position: absolute;
+      transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+      will-change: transform;
+    }
+    
+    .card-top {
+      top: 30px;
+      left: -20px;
+      z-index: 2;
+    }
+    .card-bottom {
+      bottom: 50px;
+      right: 0;
+      z-index: 1;
+    }
+
+    .card-3d:hover {
+      /* Subtle 3D tilt */
+      transform: translateY(-12px) rotateX(4deg) rotateY(-4deg) scale(1.02);
+      z-index: 10;
+      box-shadow: 0 32px 70px rgba(0,0,0,0.5);
+    }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 24px;
+      border-bottom: 1px solid #E8EEF6;
+      padding-bottom: 20px;
+    }
+    .card-header strong {
+      display: block;
+      font-size: 1.15rem;
+      color: #071B33;
+    }
+    .card-header span {
+      display: block;
+      font-size: 0.9rem;
+      color: #4B5F78;
+    }
+    .icon-box {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+    .icon-box.green { background: #e6f6ee; color: #00a651; }
+    .icon-box.blue { background: #e8f0fe; color: #1a73e8; }
+
+    .coretax-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .coretax-list li {
+      margin-bottom: 20px;
+      padding-left: 32px;
+      position: relative;
+    }
+    .coretax-list li:last-child { margin-bottom: 0; }
+    .coretax-list li::before {
+      content: "✓";
+      position: absolute;
+      left: 4px;
+      top: 0px;
+      color: #1a73e8;
+      font-size: 1.1rem;
+      font-weight: bold;
+    }
+    .coretax-list li strong {
+      display: block;
+      font-size: 0.98rem;
+      color: #071B33;
+      margin-bottom: 4px;
+    }
+    .coretax-list li span {
+      display: block;
+      font-size: 0.88rem;
+      color: #6C7D93;
+      line-height: 1.45;
+    }
+
+    @media(max-width: 1024px) {
+      .hero-coretax {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding: 40px 20px;
+      }
+      .hero-subtitle { margin: 0 auto 40px; }
+      .hero-right {
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        align-items: center;
+        perspective: none;
+      }
+      .coretax-card {
+        position: relative;
+        width: 100%;
+        max-width: 460px;
+        top: auto !important;
+        left: auto !important;
+        bottom: auto !important;
+        right: auto !important;
+      }
+      .card-3d:hover {
+        transform: translateY(-5px);
+      }
+    }
+
   </style>
 </head>
 <body>
@@ -1297,48 +1509,64 @@
 
     function renderWelcome(){
       main.innerHTML = `
-        <section class="hero-vertical fade-in-up" aria-labelledby="heroTitle">
-          <div class="hero-content">
-            <span class="eyebrow">Pendamping pajak digital untuk wajib pajak mandiri</span>
-            <h1 id="heroTitle" class="hero-title">Pajak lebih jelas,<br/>langkah lebih terarah.</h1>
-            <p class="hero-subtitle">PanduCore membantu Anda memahami kebutuhan pajak, menyiapkan dokumen, dan mengikuti panduan Coretax dengan bahasa yang lebih sederhana dan rapi.</p>
-            <div class="hero-actions-center">
-              <button class="btn btn-primary" onclick="appState.step='login'; render()">Mulai gunakan PanduCore</button>
-              <button class="btn btn-light" onclick="showModal('Cara Kerja', 'PanduCore akan memberikan beberapa pertanyaan singkat untuk memetakan kebutuhan pajak Anda (karyawan, UMKM, dll), lalu memberikan panduan dan checklist dokumen yang harus disiapkan sebelum Anda masuk ke situs resmi DJP.')">Lihat cara kerja</button>
+        <section class="hero-coretax" aria-labelledby="heroTitle">
+          <div class="hero-left">
+            <div class="hero-brand">
+              <span class="brand-text">PanduCore</span>
             </div>
+            <h1 id="heroTitle" class="hero-title">Selamat Datang.<br/>Anda akan masuk ke PanduCore</h1>
+            <p class="hero-subtitle">Pastikan Anda menggunakan perangkat yang aman sebelum melanjutkan. PanduCore akan mendampingi Anda memetakan kebutuhan pajak dengan bahasa yang sederhana.</p>
+            
+            <button class="btn-cta pulse-idle" onclick="appState.step='login'; render()">Lanjutkan ke Login &rarr;</button>
           </div>
           
-          <div class="hero-features-grid">
-            <div class="feature-card">
-              <strong>Pertanyaan terpandu</strong>
-              <span>Jawab langkah demi langkah sesuai kondisi Anda.</span>
+          <div class="hero-right">
+            <div class="coretax-card card-top card-3d">
+              <div class="card-header">
+                <div class="icon-box green">✓</div>
+                <div>
+                  <strong>Fitur PanduCore</strong>
+                  <span>Langkah terarah untuk pajak Anda.</span>
+                </div>
+              </div>
+              <ul class="coretax-list">
+                <li>
+                  <strong>Pertanyaan Terpandu</strong>
+                  <span>Sesuaikan dengan profil pajak spesifik Anda.</span>
+                </li>
+                <li>
+                  <strong>Checklist Dokumen</strong>
+                  <span>Siapkan berkas dengan mudah sebelum lapor.</span>
+                </li>
+                <li>
+                  <strong>Panduan Coretax</strong>
+                  <span>Dapatkan simulasi alur sebelum membuka situs resmi DJP.</span>
+                </li>
+              </ul>
             </div>
-            <div class="feature-card">
-              <strong>Checklist dokumen</strong>
-              <span>Ketahui dokumen yang perlu disiapkan lebih dulu.</span>
-            </div>
-            <div class="feature-card">
-              <strong>Panduan Coretax</strong>
-              <span>Dapatkan alur persiapan sebelum membuka kanal resmi.</span>
-            </div>
-          </div>
 
-          <div class="hero-audience">
-            <span class="audience-label">Dirancang untuk berbagai profil:</span>
-            <div class="tag-cloud center-tags">
-              <span class="badge">Karyawan</span>
-              <span class="badge">UMKM</span>
-              <span class="badge">Freelancer</span>
-              <span class="badge">Marketplace seller</span>
-              <span class="badge">Pengguna pemula</span>
-            </div>
-          </div>
-
-          <div class="security-banner">
-            <div class="box-icon">!</div>
-            <div class="security-text">
-              <strong>Catatan keamanan</strong>
-              <span>Jangan gunakan username atau password yang sama dengan akun Coretax. PanduCore tidak pernah meminta password Coretax.</span>
+            <div class="coretax-card card-bottom card-3d">
+              <div class="card-header">
+                <div class="icon-box blue">★</div>
+                <div>
+                  <strong>Dampak & Manfaat</strong>
+                  <span>Mengapa Anda harus menggunakan PanduCore.</span>
+                </div>
+              </div>
+              <ul class="coretax-list">
+                <li>
+                  <strong>Pelaporan Lebih Cepat</strong>
+                  <span>Hemat waktu berkat panduan langkah demi langkah.</span>
+                </li>
+                <li>
+                  <strong>Bebas Bingung</strong>
+                  <span>Bahasa teknis birokrasi disederhanakan untuk Anda.</span>
+                </li>
+                <li>
+                  <strong>Data Aman Terjamin</strong>
+                  <span>Kerahasiaan Anda terjaga. Kami tidak menyimpan password Anda.</span>
+                </li>
+              </ul>
             </div>
           </div>
         </section>

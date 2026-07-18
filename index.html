@@ -989,6 +989,52 @@
       }
     }
 
+  
+    /* === HEADER RESIZE & THEME FIX === */
+    /* Update topbar to use the same sleek gradient as the Coretax hero */
+    .topbar {
+      background: linear-gradient(135deg, #0b1d3a 0%, #173f75 100%) !important;
+      border-bottom: none !important;
+      color: #fff !important;
+      box-shadow: 0 4px 12px rgba(7,27,51,.15) !important;
+    }
+    
+    /* Shrink the header's vertical padding */
+    .topbar-inner {
+      padding: 8px 22px !important;
+    }
+
+    /* Shrink the massive logo image on desktop so the header isn't unnecessarily tall */
+    .logo-box img {
+      width: auto !important;
+      height: 48px !important; 
+      max-width: 180px !important;
+      object-fit: contain !important;
+      display: block !important;
+      filter: brightness(0) invert(1) !important; /* Keep it white for the dark background */
+    }
+
+    /* Status pill and buttons in the header to look cohesive with the dark theme */
+    .status-pill {
+      background: rgba(255,255,255,0.05) !important;
+      border: 1px solid rgba(255,255,255,0.15) !important;
+      color: #fff !important;
+    }
+    .status-dot {
+      background: #F5B700 !important;
+    }
+    .mini-btn {
+      background: rgba(255,255,255,0.1) !important;
+      border: 1px solid rgba(255,255,255,0.2) !important;
+      color: #fff !important;
+      font-weight: 600 !important;
+    }
+    .mini-btn:hover {
+      background: rgba(255,255,255,0.2) !important;
+      border-color: rgba(255,255,255,0.4) !important;
+      color: #fff !important;
+    }
+
   </style>
 </head>
 <body>

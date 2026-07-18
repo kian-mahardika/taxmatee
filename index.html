@@ -726,6 +726,57 @@
       }
     }
 
+  
+    /* === NAVY HEADER & BLUE ACCENTS === */
+    .topbar {
+      background: var(--navy) !important;
+      border-bottom: none !important;
+      color: #fff !important;
+      box-shadow: 0 4px 12px rgba(7,27,51,.15) !important;
+    }
+    
+    /* Invert the logo to white so it's visible on the navy background */
+    .logo-box img {
+      filter: brightness(0) invert(1) !important;
+    }
+
+    /* Update the header buttons to look good on navy */
+    .status-pill {
+      background: rgba(255,255,255,0.1) !important;
+      border: 1px solid rgba(255,255,255,0.2) !important;
+      color: #fff !important;
+    }
+    .status-dot {
+      background: var(--gold) !important; /* Keep the gold dot */
+    }
+    .mini-btn {
+      background: rgba(255,255,255,0.1) !important;
+      border: 1px solid rgba(255,255,255,0.2) !important;
+      color: #fff !important;
+    }
+    .mini-btn:hover {
+      background: rgba(255,255,255,0.2) !important;
+      border-color: #fff !important;
+      color: #fff !important;
+    }
+    
+    /* Change the eyebrow to navy for more accent */
+    .hero-vertical .eyebrow {
+      background: var(--navy) !important;
+      color: #fff !important;
+      border: none !important;
+    }
+
+    /* Change progress bar color to blue for more blue accents */
+    .progress-bar {
+      background: var(--blue) !important;
+    }
+    
+    /* Add a subtle blue accent top border to feature cards */
+    .feature-card {
+      border-top: 4px solid var(--blue) !important;
+    }
+
   </style>
 </head>
 <body>

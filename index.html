@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="id">
 <head>
   <meta charset="utf-8" />
@@ -583,8 +583,8 @@
     .price-desc{font-size:.84rem;color:var(--muted);margin-bottom:16px;line-height:1.4}
     .price-features{list-style:none;padding:0;margin:0 0 20px;display:grid;gap:7px}
     .price-features li{font-size:.84rem;color:var(--ink);display:flex;gap:8px;align-items:flex-start}
-    .price-features li:before{content:'v';color:var(--success);font-weight:900;flex-shrink:0;margin-top:1px}
-    .price-features li.dim:before{content:'-';color:var(--muted)}
+    .price-features li:before{content:'\2713';color:var(--success);font-weight:900;flex-shrink:0;margin-top:1px}
+    .price-features li.dim:before{content:'\2013';color:var(--muted)}
     .price-features li.dim{color:var(--muted)}
     .btn-price{width:100%;border:none;border-radius:12px;padding:12px;font-weight:800;font-size:.9rem;cursor:pointer;transition:.15s}
     .btn-price.primary{background:var(--blue);color:#fff}.btn-price.primary:hover{background:var(--blue-2)}
@@ -592,7 +592,7 @@
     .btn-price.gold{background:var(--gold);color:#1E2A3D}.btn-price.gold:hover{background:var(--gold-2)}
     .addon-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:8px}
     .addon-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px;text-align:center}
-    .addon-icon{font-size:2rem;margin-bottom:10px}
+    .addon-icon{font-size:1.8rem;margin-bottom:10px}
     .addon-name{font-weight:850;color:var(--navy);font-size:.95rem;margin-bottom:4px}
     .addon-price{font-size:1.3rem;font-weight:950;color:var(--blue);margin-bottom:6px}
     .addon-desc{font-size:.8rem;color:var(--muted);line-height:1.4}
@@ -1723,16 +1723,28 @@
     var _pricingBilling='monthly';
     function renderPricing(){
       var plans=[
-        {tier:'Free Core',price:0,priceNote:'Gratis',desc:'Fitur dasar gratis selamanya.',popular:false,features:['AI Tax Assistant dasar','Pencarian regulasi','Penjelasan sederhana','Panduan Coretax umum','Tax Knowledge Hub','Akses materi edukasi'],dim:['Personal Tax Map','Tax Calendar','Guided Workflow','Evidence Pack'],btn:'Mulai Gratis',btnClass:'outline',action:"setStep('login')"},
-        {tier:'Premium Trial 7 Hari',price:0,priceNote:'Gratis 7 Hari',desc:'Coba semua fitur premium tanpa biaya.',popular:false,features:['Personal Tax Profile','Personal Tax Map','Tax Calendar','1 Guided Workflow','1 Document Readiness Check','1 Evidence Pack','Regulatory Update Personal'],dim:[],btn:'Coba Gratis',btnClass:'outline',action:"setStep('login')"},
-        {tier:'Starter',price:59000,priceY:47200,desc:'Untuk wajib pajak pribadi dan freelancer.',popular:false,features:['Personal Tax Map','Tax Calendar','Saved Cases','Regulatory Update','Guided Workflow','Workspace 1 Usaha','Riwayat Aktivitas Dasar'],dim:['Document Readiness Check','Evidence Pack','Multi-Entity'],btn:'Pilih Starter',btnClass:'primary',action:"openInfoModal('Segera Hadir','Fitur berlangganan akan tersedia dalam waktu dekat!')"},
-        {tier:'Growth',price:129000,priceY:103200,desc:'Untuk UMKM yang ingin administrasi lebih rapi.',popular:true,features:['Semua fitur Starter','Document Readiness Check','Tax Efficiency Simulator','Evidence Pack','Risk Flag','3 Anggota Tim','Selective Document Sharing','Rekonsiliasi Sederhana'],dim:['Multi-Entity','Approval Workflow','Audit Trail'],btn:'Pilih Growth',btnClass:'primary',action:"openInfoModal('Segera Hadir','Fitur berlangganan akan tersedia dalam waktu dekat!')"},
-        {tier:'Business',price:299000,priceY:239200,desc:'Untuk usaha dengan tim dan kebutuhan lanjutan.',popular:false,features:['Semua fitur Growth','Multi-Entity Workspace','Rekonsiliasi Lanjutan','Approval Workflow','Role-Based Access','Audit Trail','Priority Support','Dashboard Kepatuhan'],dim:[],btn:'Hubungi Kami',btnClass:'gold',action:"openInfoModal('Hubungi Tim PanduCore','Email: halo@panducore.id')"}
+        {tier:'Free Core',price:0,priceNote:'Gratis',desc:'Fitur dasar gratis selamanya.',popular:false,
+         features:['AI Tax Assistant dasar','Pencarian regulasi','Penjelasan sederhana','Panduan Coretax umum','Tax Knowledge Hub','Akses materi edukasi'],
+         dim:['Personal Tax Map','Tax Calendar','Guided Workflow','Evidence Pack'],btn:'Mulai Gratis',btnClass:'outline',action:"setStep('login')"},
+        {tier:'Premium Trial 7 Hari',price:0,priceNote:'Gratis 7 Hari',desc:'Coba semua fitur premium tanpa biaya.',popular:false,
+         features:['Personal Tax Profile','Personal Tax Map','Tax Calendar','1 Guided Workflow','1 Document Readiness Check','1 Evidence Pack','Regulatory Update Personal'],
+         dim:[],btn:'Coba Gratis',btnClass:'outline',action:"setStep('login')"},
+        {tier:'Starter',price:59000,priceY:47200,desc:'Untuk wajib pajak pribadi dan freelancer.',popular:false,
+         features:['Personal Tax Map','Tax Calendar','Saved Cases','Regulatory Update','Guided Workflow','Workspace 1 Usaha','Riwayat Aktivitas Dasar'],
+         dim:['Document Readiness Check','Evidence Pack','Multi-Entity'],btn:'Pilih Starter',btnClass:'primary',
+         action:"openInfoModal('Segera Hadir','Fitur berlangganan akan tersedia dalam waktu dekat!')"},
+        {tier:'Growth',price:129000,priceY:103200,desc:'Untuk UMKM yang ingin administrasi lebih rapi.',popular:true,
+         features:['Semua fitur Starter','Document Readiness Check','Tax Efficiency Simulator','Evidence Pack','Risk Flag','3 Anggota Tim','Selective Document Sharing','Rekonsiliasi Sederhana'],
+         dim:['Multi-Entity','Approval Workflow','Audit Trail'],btn:'Pilih Growth',btnClass:'primary',
+         action:"openInfoModal('Segera Hadir','Fitur berlangganan akan tersedia dalam waktu dekat!')"},
+        {tier:'Business',price:299000,priceY:239200,desc:'Untuk usaha dengan tim dan kebutuhan lanjutan.',popular:false,
+         features:['Semua fitur Growth','Multi-Entity Workspace','Rekonsiliasi Lanjutan','Approval Workflow','Role-Based Access','Audit Trail','Priority Support','Dashboard Kepatuhan'],
+         dim:[],btn:'Hubungi Kami',btnClass:'gold',action:"openInfoModal('Hubungi Tim PanduCore','Email: halo@panducore.id')"}
       ];
       var addons=[
-        {icon:'=?',name:'Guided Filing Session',price:'Rp 35.000',desc:'Pendampingan satu workflow lengkap terdokumentasi.'},
-        {icon:'=?',name:'Document Assurance',price:'Rp 65.000',desc:'Pemeriksaan mendalam satu paket dokumen.'},
-        {icon:'=?',name:'Expert Review',price:'Rp 125.000/jam',desc:'Review dari mitra profesional independen.'}
+        {icon:'&#128203;',name:'Guided Filing Session',price:'Rp 35.000',desc:'Pendampingan satu workflow lengkap terdokumentasi.'},
+        {icon:'&#128269;',name:'Document Assurance',price:'Rp 65.000',desc:'Pemeriksaan mendalam satu paket dokumen.'},
+        {icon:'&#129309;',name:'Expert Review',price:'Rp 125.000/jam',desc:'Review dari mitra profesional independen.'}
       ];
       var bil=_pricingBilling;
       var cardsHTML=plans.map(function(p){
@@ -1771,24 +1783,45 @@
           +'<div class="addon-grid">'+addonsHTML+'</div>'
         +'</div>'
         +'<div style="text-align:center;padding:24px 0;color:var(--muted);font-size:.84rem">'
-          +'Semua data terenkripsi. PanduCore tidak menyimpan password Coretax. '
+          +'&#128274; Semua data terenkripsi. PanduCore tidak menyimpan password Coretax. '
           +'<a style="color:var(--blue);font-weight:700;cursor:pointer" onclick="setStep(\'login\')">Mulai dengan akun gratis &rarr;</a>'
         +'</div></div>';
     }
 
     function getRegulationsForProfile(tags){
       var all=[
-        {name:'UU HPP No. 7 Tahun 2021',topic:'Harmonisasi Peraturan Perpajakan',date:'29 Okt 2021',status:'aktif',explanation:'Undang-undang utama reformasi pajak Indonesia, termasuk perubahan tarif PPh, PPN, dan ketentuan UMKM.',relevance:'Berlaku untuk semua wajib pajak. Mengubah tarif PTKP dan bracket PPh orang pribadi.'},
-        {name:'PP No. 55 Tahun 2022',topic:'PPh Final UMKM 0,5%',date:'20 Des 2022',status:'aktif',explanation:'Mengatur skema PPh Final 0,5% dari omzet bagi UMKM dengan omzet di bawah Rp 4,8 miliar per tahun.',relevance:'Relevan jika Anda memiliki usaha. Bisa memilih antara PPh Final atau PPh normal.',rtags:['type_msme','type_marketplace']},
-        {name:'PMK No. 66 Tahun 2023',topic:'SPT Tahunan Orang Pribadi',date:'21 Jun 2023',status:'aktif',explanation:'Mengatur tata cara pengisian dan penyampaian SPT Tahunan PPh Orang Pribadi melalui sistem Coretax.',relevance:'Berlaku untuk semua orang pribadi wajib pajak yang melaporkan SPT Tahunan.'},
-        {name:'PMK No. 81 Tahun 2024',topic:'Coretax dan Sistem DJP Baru',date:'1 Jan 2025',status:'baru',explanation:'Regulasi implementasi sistem Coretax sebagai pengganti DJP Online. Mengatur alur registrasi, pelaporan, dan pembayaran.',relevance:'Wajib diketahui jika baru pertama kali menggunakan Coretax.',rtags:['coretax_never','coretax_problem','spt_first_time']},
-        {name:'UU PPN jo HPP',topic:'PPN dan Kewajiban PKP',date:'Terakhir 2021',status:'perhatian',explanation:'Mengatur kewajiban PKP bagi usaha yang omzetnya melebihi Rp 4,8 miliar setahun.',relevance:'Relevan jika usaha mendekati atau melewati batas omzet Rp 4,8 miliar.',rtags:['type_msme','tax_invoice_requested','turnover_above_500']},
-        {name:'SE DJP No. 2 Tahun 2024',topic:'Panduan Penggunaan Coretax',date:'Mar 2024',status:'baru',explanation:'Surat edaran memuat panduan teknis step-by-step penggunaan fitur-fitur utama Coretax bagi wajib pajak.',relevance:'Penting sebagai referensi saat menggunakan modul pelaporan di Coretax.'}
+        {name:'UU HPP No. 7 Tahun 2021',topic:'Harmonisasi Peraturan Perpajakan',date:'29 Okt 2021',status:'aktif',
+         explanation:'Undang-undang utama reformasi pajak Indonesia, termasuk perubahan tarif PPh, PPN, dan ketentuan UMKM.',
+         relevance:'Berlaku untuk semua wajib pajak. Mengubah tarif PTKP dan bracket PPh orang pribadi.'},
+        {name:'PP No. 55 Tahun 2022',topic:'PPh Final UMKM 0,5%',date:'20 Des 2022',status:'aktif',
+         explanation:'Mengatur skema PPh Final 0,5% dari omzet bagi UMKM dengan omzet di bawah Rp 4,8 miliar per tahun.',
+         relevance:'Relevan jika Anda memiliki usaha. Bisa memilih antara PPh Final atau PPh normal.',
+         rtags:['type_msme','type_marketplace']},
+        {name:'PMK No. 66 Tahun 2023',topic:'SPT Tahunan Orang Pribadi',date:'21 Jun 2023',status:'aktif',
+         explanation:'Mengatur tata cara pengisian dan penyampaian SPT Tahunan PPh Orang Pribadi melalui sistem Coretax.',
+         relevance:'Berlaku untuk semua orang pribadi wajib pajak yang melaporkan SPT Tahunan.'},
+        {name:'PMK No. 81 Tahun 2024',topic:'Coretax dan Sistem DJP Baru',date:'1 Jan 2025',status:'baru',
+         explanation:'Regulasi implementasi sistem Coretax sebagai pengganti DJP Online. Mengatur alur registrasi, pelaporan, dan pembayaran.',
+         relevance:'Wajib diketahui jika baru pertama kali menggunakan Coretax.',
+         rtags:['coretax_never','coretax_problem','spt_first_time']},
+        {name:'UU PPN jo UU HPP',topic:'PPN dan Kewajiban PKP',date:'Terakhir 2021',status:'perhatian',
+         explanation:'Mengatur kewajiban PKP bagi usaha yang omzetnya melebihi Rp 4,8 miliar setahun.',
+         relevance:'Relevan jika usaha mendekati atau melewati batas omzet Rp 4,8 miliar.',
+         rtags:['type_msme','tax_invoice_requested','turnover_above_500']},
+        {name:'SE DJP No. 2 Tahun 2024',topic:'Panduan Penggunaan Coretax',date:'Mar 2024',status:'baru',
+         explanation:'Surat edaran memuat panduan teknis step-by-step penggunaan fitur-fitur utama Coretax bagi wajib pajak.',
+         relevance:'Penting sebagai referensi saat menggunakan modul pelaporan di Coretax.'}
       ];
-      return all.filter(function(r){if(!r.rtags)return true;return r.rtags.some(function(t){return tags.has(t);});}).slice(0,5);
+      return all.filter(function(r){
+        if(!r.rtags) return true;
+        return r.rtags.some(function(t){return tags.has(t);});
+      }).slice(0,5);
     }
 
-    function toggleCitation(idx){var el=document.getElementById('cit-'+idx);if(el)el.classList.toggle('open');}
+    function toggleCitation(idx){
+      var el=document.getElementById('cit-'+idx);
+      if(el) el.classList.toggle('open');
+    }
 
     function renderSimulator(turnover,hasSalary){
       var salaryMap={'none':0,'under60':45000000,'60to250':140000000,'above250':300000000};
@@ -1826,26 +1859,44 @@
     function getCbotReply(msg){
       var m=msg.toLowerCase();
       var profile=appState.pathway?appState.pathway.profile:'wajib pajak';
-      var kb={'npwp':['NPWP adalah identitas perpajakan. Untuk mendapatkan NPWP, daftar online di ereg.pajak.go.id atau datang ke KPP terdekat dengan KTP.','NPWP orang pribadi kini terintegrasi dengan NIK. Pastikan data NIK Anda sudah terdaftar di sistem DJP.'],'spt':['SPT adalah laporan pajak tahunan. Batas lapor SPT Tahunan untuk orang pribadi adalah 31 Maret setiap tahun.','Untuk lapor SPT, masuk ke Coretax dengan akun resmi, pilih menu SPT Tahunan, dan ikuti panduan yang tersedia.'],'coretax':['Coretax adalah sistem administrasi pajak DJP baru. Aksesnya di coretax.pajak.go.id menggunakan NPWP/NIK dan password resmi.','Jika ini pertama kali menggunakan Coretax, periksa panduan langkah demi langkah di bagian Jalur Panduan halaman hasil Anda.'],'pph':['PPh adalah Pajak Penghasilan. Ada beberapa jenis: PPh 21 untuk karyawan, PPh Final 0,5% untuk UMKM, dan lainnya.','Untuk karyawan, PPh 21 biasanya sudah dipotong oleh pemberi kerja. Minta bukti potong dan laporkan di SPT Tahunan.'],'ppn':['PPN dikenakan atas penjualan barang/jasa kena pajak. Tarif PPN saat ini adalah 11%.','Kewajiban PKP muncul jika omzet usaha melebihi Rp 4,8 miliar setahun. Di bawah itu, Anda belum wajib PKP.'],'umkm':['UMKM dengan omzet di bawah Rp 4,8 miliar bisa memanfaatkan PPh Final 0,5% dari omzet. Lebih sederhana dari PPh normal.','Dokumen penting UMKM: rekap penjualan per bulan, bukti transaksi, dan catatan biaya usaha.'],'dokumen':['Dokumen utama untuk lapor SPT: bukti potong (jika karyawan), rekap penghasilan, dan rekap omzet (jika punya usaha).','Kumpulkan semua dokumen sebelum membuka Coretax untuk menghindari proses yang terputus.'],'batas':['Batas lapor SPT Tahunan OP: 31 Maret. Batas SPT Badan: 30 April. Terlambat kena sanksi Rp 100.000 untuk orang pribadi.','Untuk SPT Masa bulanan, batas pelaporan tanggal 20 bulan berikutnya. Setor pajak paling lambat tanggal 15.']};
+      var kb={
+        'npwp':['NPWP adalah identitas perpajakan. Untuk mendapatkan NPWP, daftar online di ereg.pajak.go.id atau datang ke KPP terdekat dengan KTP.','NPWP orang pribadi kini terintegrasi dengan NIK. Pastikan data NIK Anda sudah terdaftar di sistem DJP.'],
+        'spt':['SPT adalah laporan pajak tahunan. Batas lapor SPT Tahunan untuk orang pribadi adalah 31 Maret setiap tahun.','Untuk lapor SPT, masuk ke Coretax dengan akun resmi, pilih menu SPT Tahunan, dan ikuti panduan yang tersedia.'],
+        'coretax':['Coretax adalah sistem administrasi pajak DJP baru. Aksesnya di coretax.pajak.go.id menggunakan NPWP/NIK dan password resmi.','Jika ini pertama kali menggunakan Coretax, periksa panduan di bagian Jalur Panduan pada halaman hasil Anda.'],
+        'pph':['PPh adalah Pajak Penghasilan. Ada beberapa jenis: PPh 21 untuk karyawan, PPh Final 0,5% untuk UMKM, dan lainnya.','Untuk karyawan, PPh 21 biasanya sudah dipotong pemberi kerja. Minta bukti potong dan laporkan di SPT Tahunan.'],
+        'ppn':['PPN dikenakan atas penjualan barang/jasa kena pajak. Tarif PPN saat ini adalah 11%.','Kewajiban PKP muncul jika omzet usaha melebihi Rp 4,8 miliar setahun.'],
+        'umkm':['UMKM dengan omzet di bawah Rp 4,8 miliar bisa memanfaatkan PPh Final 0,5% dari omzet. Lebih sederhana dari PPh normal.','Dokumen penting UMKM: rekap penjualan per bulan, bukti transaksi, dan catatan biaya usaha.'],
+        'dokumen':['Dokumen utama untuk lapor SPT: bukti potong (karyawan), rekap penghasilan, dan rekap omzet (jika punya usaha).','Kumpulkan semua dokumen sebelum membuka Coretax untuk menghindari proses yang terputus.'],
+        'batas':['Batas lapor SPT Tahunan OP: 31 Maret. Batas SPT Badan: 30 April. Terlambat kena sanksi Rp 100.000 untuk orang pribadi.','Untuk SPT Masa bulanan, batas pelaporan tanggal 20 bulan berikutnya. Setor pajak paling lambat tanggal 15.']
+      };
       var keys=Object.keys(kb);
-      for(var i=0;i<keys.length;i++){if(m.indexOf(keys[i])>=0){var arr=kb[keys[i]];return arr[Math.floor(Math.random()*arr.length)];}}
-      var def=['Sebagai '+profile+', coba tanyakan dengan kata kunci seperti: NPWP, SPT, Coretax, PPh, PPN, UMKM, dokumen, atau batas waktu.','Pertanyaan bagus! Untuk jawaban lebih spesifik, sebutkan konteks usaha atau jenis pajak. Misalnya: "dokumen untuk UMKM" atau "batas lapor SPT".','Untuk pertanyaan kompleks, gunakan fitur Konsultasi Ahli Pajak di bagian bawah halaman ini.'];
+      for(var i=0;i<keys.length;i++){
+        if(m.indexOf(keys[i])>=0){var arr=kb[keys[i]];return arr[Math.floor(Math.random()*arr.length)];}
+      }
+      var def=[
+        'Sebagai '+profile+', coba tanyakan dengan kata kunci: NPWP, SPT, Coretax, PPh, PPN, UMKM, dokumen, atau batas waktu.',
+        'Pertanyaan bagus! Untuk jawaban lebih spesifik, sebutkan konteks usaha atau jenis pajak. Contoh: "dokumen untuk UMKM" atau "batas lapor SPT".',
+        'Untuk pertanyaan kompleks, gunakan fitur Konsultasi Ahli Pajak di bagian bawah halaman ini.'
+      ];
       return def[Math.floor(Math.random()*def.length)];
     }
 
     function sendCbotMessage(msg){
-      if(!msg||!msg.trim())return;
+      if(!msg||!msg.trim()) return;
       var msgs=document.getElementById('cbotMessages');
-      if(!msgs)return;
-      var uDiv=document.createElement('div');uDiv.className='cbot-msg user';uDiv.textContent=msg;msgs.appendChild(uDiv);msgs.scrollTop=msgs.scrollHeight;
-      var typDiv=document.createElement('div');typDiv.className='cbot-msg bot';typDiv.id='cbotTyping';typDiv.innerHTML='<span style="letter-spacing:3px;opacity:.6">...</span>';msgs.appendChild(typDiv);msgs.scrollTop=msgs.scrollHeight;
+      if(!msgs) return;
+      var uDiv=document.createElement('div'); uDiv.className='cbot-msg user'; uDiv.textContent=msg; msgs.appendChild(uDiv); msgs.scrollTop=msgs.scrollHeight;
+      var typDiv=document.createElement('div'); typDiv.className='cbot-msg bot'; typDiv.id='cbotTyping'; typDiv.textContent='...'; msgs.appendChild(typDiv); msgs.scrollTop=msgs.scrollHeight;
       setTimeout(function(){
-        var td=document.getElementById('cbotTyping');if(td)td.remove();
-        var bDiv=document.createElement('div');bDiv.className='cbot-msg bot';bDiv.textContent=getCbotReply(msg);msgs.appendChild(bDiv);msgs.scrollTop=msgs.scrollHeight;
-      },700+Math.random()*600);
+        var td=document.getElementById('cbotTyping'); if(td) td.remove();
+        var bDiv=document.createElement('div'); bDiv.className='cbot-msg bot'; bDiv.textContent=getCbotReply(msg); msgs.appendChild(bDiv); msgs.scrollTop=msgs.scrollHeight;
+      }, 700+Math.floor(Math.random()*500));
     }
 
-    function sendCbotInput(){var inp=document.getElementById('cbotInput');if(!inp)return;var v=inp.value.trim();inp.value='';sendCbotMessage(v);}
+    function sendCbotInput(){
+      var inp=document.getElementById('cbotInput'); if(!inp) return;
+      var v=inp.value.trim(); inp.value=''; sendCbotMessage(v);
+    }
     function renderLogin(){
       main.innerHTML = `
         <section class="panel screen-card" aria-labelledby="loginTitle">
@@ -2383,12 +2434,12 @@
 
           <!-- TAX OBLIGATION SIMULATOR -->
           <div class="panel screen-card">
-            <div class="section-title" style="font-size:1.05rem;margin-bottom:16px">&#129518; Simulasi Kewajiban Pajak</div>
+            <div class="section-title" style="font-size:1.05rem;margin-bottom:16px">&#9881; Simulasi Kewajiban Pajak</div>
             <p class="hint" style="margin:0 0 16px">Masukkan data kisaran untuk melihat estimasi ilustrasi. Bukan perhitungan resmi.</p>
             <div class="sim-shell">
               <div class="sim-controls">
                 <div class="sim-field">
-                  <label>Kisaran Gaji/Tahun</label>
+                  <label>Kisaran Gaji / Tahun</label>
                   <select id="simIncome">
                     <option value="none">Tidak ada gaji</option>
                     <option value="under60">Di bawah Rp 60 juta</option>
@@ -2397,7 +2448,7 @@
                   </select>
                 </div>
                 <div class="sim-field">
-                  <label>Kisaran Omzet Usaha/Tahun</label>
+                  <label>Kisaran Omzet Usaha / Tahun</label>
                   <select id="simTurnover">
                     <option value="under_100">Di bawah Rp 100 juta</option>
                     <option value="100_500">Rp 100 juta - Rp 500 juta</option>
@@ -2406,7 +2457,7 @@
                   </select>
                 </div>
                 <div class="sim-field" style="display:flex;align-items:flex-end">
-                  <button class="sim-btn" onclick="runSimulator()">&#128290; Hitung Estimasi</button>
+                  <button class="sim-btn" onclick="runSimulator()">Hitung Estimasi</button>
                 </div>
               </div>
               <div id="simOutput"></div>
@@ -2418,19 +2469,19 @@
 
           <!-- FREE AI CHATBOT -->
           <div class="panel screen-card">
-            <div class="section-title" style="font-size:1.05rem;margin-bottom:16px">&#129302; Tanya PanduCore AI <span style="font-size:.75rem;font-weight:600;color:var(--muted);margin-left:6px">Gratis</span></div>
+            <div class="section-title" style="font-size:1.05rem;margin-bottom:16px">&#128172; Tanya PanduCore AI <span style="font-size:.75rem;font-weight:600;color:var(--muted);margin-left:6px">Gratis</span></div>
             <p class="hint" style="margin:0 0 14px">Tanya pertanyaan dasar pajak. Untuk konsultasi mendalam, gunakan layanan expert di bawah.</p>
             <div class="chatbot-shell">
               <div class="chatbot-header">
-                <div class="chatbot-avatar">&#129302;</div>
+                <div class="chatbot-avatar">&#128172;</div>
                 <div class="chatbot-hinfo">
                   <div class="chatbot-hname">PanduCore AI</div>
-                  <div class="chatbot-hstatus">&#127902; Siap menjawab pertanyaan pajak dasar</div>
+                  <div class="chatbot-hstatus">&#9679; Siap menjawab pertanyaan pajak dasar</div>
                 </div>
                 <div class="chatbot-badge">AI GRATIS</div>
               </div>
               <div class="chatbot-messages" id="cbotMessages">
-                <div class="cbot-msg bot">Halo! Saya PanduCore AI. Tanyakan seputar pajak seperti NPWP, SPT, Coretax, PPh, atau batas waktu. Untuk konsultasi mendalam dengan ahli, gunakan layanan premium di bawah. &#128522;</div>
+                <div class="cbot-msg bot">Halo! Saya PanduCore AI. Tanyakan seputar pajak seperti NPWP, SPT, Coretax, PPh, atau batas waktu. Untuk konsultasi mendalam dengan ahli, gunakan layanan premium di bawah.</div>
               </div>
               <div class="chatbot-suggestions">
                 <button class="cbot-chip" onclick="sendCbotMessage('Apa itu NPWP?')">Apa itu NPWP?</button>
@@ -2464,26 +2515,36 @@
         var incSel=document.getElementById('simIncome');
         var turSel=document.getElementById('simTurnover');
         if(incSel){
-          if(ws.salaryRange&&ws.salaryRange.indexOf('60 juta sampai')>=0)incSel.value='60to250';
-          else if(ws.salaryRange&&ws.salaryRange.indexOf('atas')>=0)incSel.value='above250';
-          else if(ws.salaryRange&&ws.salaryRange.indexOf('bawah')>=0)incSel.value='under60';
-          if(ans.annual_turnover&&turSel)turSel.value=ans.annual_turnover;
+          if(ws.salaryRange&&ws.salaryRange.indexOf('60 juta sampai')>=0) incSel.value='60to250';
+          else if(ws.salaryRange&&ws.salaryRange.indexOf('atas')>=0) incSel.value='above250';
+          else if(ws.salaryRange&&ws.salaryRange.indexOf('bawah')>=0) incSel.value='under60';
+          if(ans.annual_turnover&&turSel) turSel.value=ans.annual_turnover;
         }
         runSimulator();
         var cp=document.getElementById('citationPanel');
         if(cp){
           var tags=new Set(appState.tags||[]);
           var regs=getRegulationsForProfile(tags);
-          cp.innerHTML='<div class="section-title" style="font-size:1.05rem;margin-bottom:16px">&#128203; Dasar Regulasi yang Relevan untuk Anda</div>'
+          var cHTML='<div class="section-title" style="font-size:1.05rem;margin-bottom:16px">&#128203; Dasar Regulasi yang Relevan untuk Anda</div>'
             +'<p class="hint" style="margin:0 0 14px">Klik regulasi untuk membaca penjelasan sederhana.</p>'
-            +'<div class="citation-list">'+regs.map(function(r,i){
+            +'<div class="citation-list">'
+            +regs.map(function(r,i){
               return '<div class="citation-item" id="cit-'+i+'">'
-                +'<div class="citation-header" onclick="toggleCitation('+i+')"><span class="citation-badge '+r.status+'">'
-                +r.status.toUpperCase()+'</span><span class="citation-name">'+escapeHTML(r.name)+'</span><span class="citation-date">'+escapeHTML(r.date)+'</span><span class="citation-chevron">v</span></div>'
-                +'<div class="citation-body"><div class="citation-topic">'+escapeHTML(r.topic)+'</div>'
-                +'<div class="citation-explanation">'+escapeHTML(r.explanation)+'</div>'
-                +'<div class="citation-relevance"><strong>Relevansi untuk Anda:</strong> '+escapeHTML(r.relevance)+'</div></div></div>';
-            }).join('')+'</div>';
+                +'<div class="citation-header" onclick="toggleCitation('+i+')">'
+                  +'<span class="citation-badge '+r.status+'">'+r.status.toUpperCase()+'</span>'
+                  +'<span class="citation-name">'+escapeHTML(r.name)+'</span>'
+                  +'<span class="citation-date">'+escapeHTML(r.date)+'</span>'
+                  +'<span class="citation-chevron">&#9660;</span>'
+                +'</div>'
+                +'<div class="citation-body">'
+                  +'<div class="citation-topic">'+escapeHTML(r.topic)+'</div>'
+                  +'<div class="citation-explanation">'+escapeHTML(r.explanation)+'</div>'
+                  +'<div class="citation-relevance"><strong>Relevansi untuk Anda:</strong> '+escapeHTML(r.relevance)+'</div>'
+                +'</div>'
+                +'</div>';
+            }).join('')
+            +'</div>';
+          cp.innerHTML=cHTML;
         }
       },200);
     }

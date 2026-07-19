@@ -463,7 +463,7 @@
     .cal-evt-days.ok{background:#EAF8F0;color:var(--success);border:1px solid #B9E4C8}
     /* Premium Banner */
     .premium-banner{background:linear-gradient(135deg,#071B33 0%,#1559B7 50%,#0B2545 100%);border-radius:22px;padding:28px 30px;color:#fff;position:relative;overflow:hidden;margin-top:0}
-    .premium-banner:before{content:'Γ£¿';position:absolute;top:-10px;right:20px;font-size:4rem;opacity:.15}
+    .premium-banner:before{content:'✨';position:absolute;top:-10px;right:20px;font-size:4rem;opacity:.15}
     .premium-badge{display:inline-flex;align-items:center;gap:6px;background:var(--gold);color:#1E2A3D;border-radius:999px;padding:5px 12px;font-size:.75rem;font-weight:900;margin-bottom:12px}
     .premium-banner h2{margin:0 0 8px;font-size:1.3rem;color:#fff}
     .premium-banner p{margin:0 0 20px;color:rgba(255,255,255,.8);font-size:.92rem;line-height:1.5}
@@ -479,7 +479,7 @@
     .expert-card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:20px;box-shadow:var(--shadow-soft);transition:transform .16s,box-shadow .16s;position:relative}
     .expert-card:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
     .expert-card.featured{border-color:var(--gold);}
-    .expert-card.featured:before{content:'Γ¡É Terpopuler';position:absolute;top:-1px;right:16px;background:var(--gold);color:#1E2A3D;font-size:.7rem;font-weight:900;padding:4px 10px;border-radius:0 0 10px 10px}
+    .expert-card.featured:before{content:'⭐ Terpopuler';position:absolute;top:-1px;right:16px;background:var(--gold);color:#1E2A3D;font-size:.7rem;font-weight:900;padding:4px 10px;border-radius:0 0 10px 10px}
     .expert-avatar{width:72px;height:72px;border-radius:50%;object-fit:cover;border:3px solid var(--surface-3);margin-bottom:12px}
     .expert-name{font-size:1.05rem;font-weight:850;color:var(--navy);margin:0 0 2px}
     .expert-title{font-size:.82rem;color:var(--muted);margin:0 0 10px}
@@ -565,26 +565,27 @@
       .chat-shell{height:calc(100vh - 140px)}
     }
 
+
     /* ===== PRICING PAGE ===== */
     .pricing-hero{text-align:center;padding:40px 20px 28px;max-width:680px;margin:0 auto}
     .pricing-hero h1{font-size:2rem;color:var(--navy);margin:0 0 12px;letter-spacing:-.03em}
     .pricing-hero p{color:var(--muted);font-size:1rem;line-height:1.6;margin:0 0 24px}
     .pricing-toggle{display:inline-flex;background:var(--surface-3);border-radius:999px;padding:4px;gap:4px;margin-bottom:36px}
-    .pricing-toggle button{border:none;border-radius:999px;padding:9px 22px;font-weight:800;font-size:.88rem;cursor:pointer;transition:.2s;background:transparent;color:var(--muted)}
+    .pricing-toggle button{border:none;border-radius:999px;padding:99px 22px;font-weight:800;font-size:.88rem;cursor:pointer;transition:.2s;background:transparent;color:var(--muted)}
     .pricing-toggle button.active{background:#fff;color:var(--navy);box-shadow:0 2px 8px rgba(7,27,51,.12)}
     .pricing-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:18px;margin-bottom:28px}
     .price-card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:24px;position:relative;transition:transform .16s,box-shadow .16s}
     .price-card:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
     .price-card.popular{border-color:var(--blue);box-shadow:0 0 0 2px rgba(21,89,183,.15)}
-    .price-card.popular:before{content:'Paling Populer';position:absolute;top:-1px;left:50%;transform:translateX(-50%);background:var(--blue);color:#fff;font-size:.7rem;font-weight:900;padding:5px 14px;border-radius:0 0 12px 12px;white-space:nowrap}
+    .price-card.popular:before{content:'⭐ Paling Populer';position:absolute;top:-1px;left:50%;transform:translateX(-50%);background:var(--blue);color:#fff;font-size:.7rem;font-weight:900;padding:5px 14px;border-radius:0 0 12px 12px;white-space:nowrap}
     .price-tier{font-size:.78rem;font-weight:900;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:10px}
     .price-amount{font-size:2rem;font-weight:950;color:var(--navy);line-height:1;margin-bottom:4px}
     .price-amount small{font-size:.75rem;font-weight:600;color:var(--muted)}
     .price-desc{font-size:.84rem;color:var(--muted);margin-bottom:16px;line-height:1.4}
     .price-features{list-style:none;padding:0;margin:0 0 20px;display:grid;gap:7px}
     .price-features li{font-size:.84rem;color:var(--ink);display:flex;gap:8px;align-items:flex-start}
-    .price-features li:before{content:'\2713';color:var(--success);font-weight:900;flex-shrink:0;margin-top:1px}
-    .price-features li.dim:before{content:'\2013';color:var(--muted)}
+    .price-features li:before{content:'✓';color:var(--success);font-weight:900;flex-shrink:0;margin-top:1px}
+    .price-features li.dim:before{content:'–';color:var(--muted)}
     .price-features li.dim{color:var(--muted)}
     .btn-price{width:100%;border:none;border-radius:12px;padding:12px;font-weight:800;font-size:.9rem;cursor:pointer;transition:.15s}
     .btn-price.primary{background:var(--blue);color:#fff}.btn-price.primary:hover{background:var(--blue-2)}
@@ -600,7 +601,7 @@
     .sim-shell{display:grid;gap:14px}
     .sim-controls{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
     .sim-field label{font-size:.8rem;font-weight:800;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;display:block;margin-bottom:6px}
-    .sim-field select{width:100%;border:1.5px solid var(--line);border-radius:10px;padding:10px 12px;font-size:.9rem;color:var(--ink);background:#fff}
+    .sim-field select{width:100%;border:1.5px solid var(--line);border-radius:10px;padding:10px 12px;font-size:.9rem;color:var(--ink);background:#fff;appearance:none;-webkit-appearance:none}
     .sim-field select:focus{border-color:var(--blue);outline:none}
     .sim-results{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:4px}
     .sim-result-card{border-radius:16px;padding:18px;border:1px solid var(--line)}
@@ -1035,7 +1036,7 @@
     }
     .coretax-list li:last-child { margin-bottom: 0; }
     .coretax-list li::before {
-      content: "Γ£ô";
+      content: "✓";
       position: absolute;
       left: 4px;
       top: 0px;
@@ -1660,13 +1661,13 @@
             <p class="hero-subtitle">Pastikan Anda menggunakan perangkat yang aman sebelum melanjutkan. PanduCore akan mendampingi Anda memetakan kebutuhan pajak dengan bahasa yang sederhana.</p>
             
             <button class="btn-cta pulse-idle" onclick="appState.step='login'; render()">Mulai Sekarang &rarr;</button>
-            <button class="mini-btn" style="margin-top:12px;padding:10px 20px" onclick="setStep('pricing')">Lihat Paket &amp; Harga</button>
+            <button class="mini-btn" style="margin-top:12px;padding:10px 20px" onclick="setStep('pricing')">🏷️ Lihat Paket &amp; Harga</button>
           </div>
           
           <div class="hero-right">
             <div class="coretax-card card-top card-3d">
               <div class="card-header">
-                <div class="icon-box green">Γ£ô</div>
+                <div class="icon-box green">✓</div>
                 <div>
                   <strong>Fitur PanduCore</strong>
                   <span>Langkah terarah untuk pajak Anda.</span>
@@ -1690,7 +1691,7 @@
 
             <div class="coretax-card card-bottom card-3d">
               <div class="card-header">
-                <div class="icon-box blue">Γÿà</div>
+                <div class="icon-box blue">★</div>
                 <div>
                   <strong>Dampak & Manfaat</strong>
                   <span>Mengapa Anda harus menggunakan PanduCore.</span>
@@ -1720,6 +1721,7 @@
       return `<p>PanduCore bekerja dengan pertanyaan terpandu. Jawaban Anda dipakai untuk menyusun jalur pajak sementara, checklist dokumen, skor kesiapan, dan panduan langkah berikutnya.</p><p>PanduCore bukan kanal resmi DJP. Untuk pelaporan final, tetap gunakan kanal resmi dan ikuti ketentuan yang berlaku.</p>`;
     }
 
+
     var _pricingBilling='monthly';
     function renderPricing(){
       var plans=[
@@ -1742,9 +1744,9 @@
          dim:[],btn:'Hubungi Kami',btnClass:'gold',action:"openInfoModal('Hubungi Tim PanduCore','Email: halo@panducore.id')"}
       ];
       var addons=[
-        {icon:'&#128203;',name:'Guided Filing Session',price:'Rp 35.000',desc:'Pendampingan satu workflow lengkap terdokumentasi.'},
-        {icon:'&#128269;',name:'Document Assurance',price:'Rp 65.000',desc:'Pemeriksaan mendalam satu paket dokumen.'},
-        {icon:'&#129309;',name:'Expert Review',price:'Rp 125.000/jam',desc:'Review dari mitra profesional independen.'}
+        {icon:'📋',name:'Guided Filing Session',price:'Rp 35.000',desc:'Pendampingan satu workflow lengkap terdokumentasi.'},
+        {icon:'🔍',name:'Document Assurance',price:'Rp 65.000',desc:'Pemeriksaan mendalam satu paket dokumen.'},
+        {icon:'🤝',name:'Expert Review',price:'Rp 125.000/jam',desc:'Review dari mitra profesional independen.'}
       ];
       var bil=_pricingBilling;
       var cardsHTML=plans.map(function(p){
@@ -1778,12 +1780,12 @@
         +'</div>'
         +'<div class="pricing-grid">'+cardsHTML+'</div>'
         +'<div class="panel screen-card" style="margin-top:0">'
-          +'<div class="section-title" style="font-size:1.05rem;margin-bottom:16px">Add-on Layanan (Bayar Per Penggunaan)</div>'
+          +'<div class="section-title" style="font-size:1.05rem;margin-bottom:16px">📦 Add-on Layanan (Bayar Per Penggunaan)</div>'
           +'<p class="hint" style="margin:0 0 14px">Tidak perlu berlangganan. Aktifkan hanya saat dibutuhkan.</p>'
           +'<div class="addon-grid">'+addonsHTML+'</div>'
         +'</div>'
         +'<div style="text-align:center;padding:24px 0;color:var(--muted);font-size:.84rem">'
-          +'&#128274; Semua data terenkripsi. PanduCore tidak menyimpan password Coretax. '
+          +'🔒 Semua data terenkripsi. PanduCore tidak menyimpan password Coretax. '
           +'<a style="color:var(--blue);font-weight:700;cursor:pointer" onclick="setStep(\'login\')">Mulai dengan akun gratis &rarr;</a>'
         +'</div></div>';
     }
@@ -1846,7 +1848,7 @@
           +'<div class="sim-amount">'+r.amount+'<small>/tahun</small></div>'
           +'<div class="sim-note">'+r.note+'</div></div>';
       }).join('')+'</div>'
-      +'<div class="sim-disclaimer"><span>&#9888;</span><span>Angka di atas adalah <strong>estimasi ilustrasi</strong> berdasarkan asumsi sederhana. Bukan perhitungan resmi. Gunakan kanal resmi DJP untuk perhitungan final.</span></div>';
+      +'<div class="sim-disclaimer"><span>⚠️</span><span>Angka di atas adalah <strong>estimasi ilustrasi</strong> berdasarkan asumsi sederhana. Bukan perhitungan resmi. Gunakan kanal resmi DJP untuk perhitungan final.</span></div>';
     }
 
     function runSimulator(){
@@ -1954,12 +1956,12 @@
       appState.user.loginConfirmed = true;
       saveState();
       showAILoading(
-        'Menyiapkan sesi AndaΓÇª',
+        'Menyiapkan sesi Anda…',
         `Halo, <strong>${name}</strong>! PanduCore sedang memuat profil dan menyiapkan panduan khusus untuk Anda.`,
         [
-          {icon:'≡ƒöÉ', text:'Memverifikasi keamanan sesi'},
-          {icon:'≡ƒºá', text:'Memuat modul panduan pajak'},
-          {icon:'Γ£à', text:'Sesi siap ΓÇö mengarahkan Anda'}
+          {icon:'🔐', text:'Memverifikasi keamanan sesi'},
+          {icon:'🧠', text:'Memuat modul panduan pajak'},
+          {icon:'✅', text:'Sesi siap — mengarahkan Anda'}
         ],
         2200,
         () => setStep('security')
@@ -2063,7 +2065,7 @@
               ${question.options.map(option => `
                 <button type="button" class="option-btn ${currentAnswer === option.value ? 'selected' : ''}" onclick="answerQuestion('${question.id}','${option.value}')">
                   <span class="option-main"><strong>${escapeHTML(option.label)}</strong><span>${escapeHTML(option.desc)}</span></span>
-                  <span class="checkmark">${currentAnswer === option.value ? '├ó┼ôΓÇ£' : ''}</span>
+                  <span class="checkmark">${currentAnswer === option.value ? '✓' : ''}</span>
                 </button>
               `).join('')}
             </div>
@@ -2094,12 +2096,12 @@
       if(isLast){
         const nextStep = appState.answers.workspace_need === 'yes' ? 'workspace' : 'result';
         showAILoading(
-          'AI sedang menganalisis jawaban AndaΓÇª',
+          'AI sedang menganalisis jawaban Anda…',
           'PanduCore memproses semua jawaban untuk menyusun jalur pajak, skor kesiapan, dan rekomendasi personal.',
           [
-            {icon:'≡ƒôè', text:'Menganalisis pola jawaban'},
-            {icon:'≡ƒù║∩╕Å', text:'Menyusun jalur pajak personal'},
-            {icon:'≡ƒÄ»', text:'Menghasilkan rekomendasi prioritas'}
+            {icon:'📊', text:'Menganalisis pola jawaban'},
+            {icon:'🗺️', text:'Menyusun jalur pajak personal'},
+            {icon:'🎯', text:'Menghasilkan rekomendasi prioritas'}
           ],
           2800,
           () => setStep(nextStep)
@@ -2140,12 +2142,12 @@
       ['salaryRange','businessRange','freelanceRange','incomeSources','hasSlip','hasSalesRecord','hasExpenseRecord','hasPreviousProof'].forEach(id => appState.workspace[id] = document.getElementById(id).value);
       saveState();
       showAILoading(
-        'AI sedang menyempurnakan hasil AndaΓÇª',
+        'AI sedang menyempurnakan hasil Anda…',
         'Data ruang persiapan telah diterima. PanduCore sedang menggabungkan semua informasi untuk menghasilkan laporan lengkap.',
         [
-          {icon:'≡ƒô¥', text:'Memproses data dokumen & penghasilan'},
-          {icon:'ΓÜÖ∩╕Å', text:'Menghitung skor kesiapan & risiko'},
-          {icon:'≡ƒôï', text:'Menyusun hasil dan panduan lengkap'}
+          {icon:'📝', text:'Memproses data dokumen & penghasilan'},
+          {icon:'⚙️', text:'Menghitung skor kesiapan & risiko'},
+          {icon:'📋', text:'Menyusun hasil dan panduan lengkap'}
         ],
         2500,
         () => setStep('result')
@@ -2264,13 +2266,13 @@
 
     // ===== TAX CALENDAR EVENTS =====
     const taxEvents = [
-      {month:0,day:31,label:'Batas Bayar PPh Masa Des',type:'blue',icon:'≡ƒÆ│',recurringMonthly:false},
-      {day:15,label:'Batas Setor PPh Pasal 21',type:'gold',icon:'≡ƒÆ░',recurringMonthly:true},
-      {day:20,label:'Batas Lapor SPT Masa PPh 21',type:'blue',icon:'≡ƒôï',recurringMonthly:true},
-      {day:25,label:'Batas Lapor SPT Masa PPN',type:'gold',icon:'≡ƒº╛',recurringMonthly:true},
-      {month:2,day:31,label:'Batas SPT Tahunan OP',type:'red',icon:'ΓÜá∩╕Å',recurringMonthly:false},
-      {month:3,day:30,label:'Batas SPT Tahunan Badan',type:'red',icon:'≡ƒÅó',recurringMonthly:false},
-      {month:6,day:31,label:'Batas Perpanjangan SPT Tahunan OP',type:'gold',icon:'≡ƒôà',recurringMonthly:false}
+      {month:0,day:31,label:'Batas Bayar PPh Masa Des',type:'blue',icon:'💳',recurringMonthly:false},
+      {day:15,label:'Batas Setor PPh Pasal 21',type:'gold',icon:'💰',recurringMonthly:true},
+      {day:20,label:'Batas Lapor SPT Masa PPh 21',type:'blue',icon:'📋',recurringMonthly:true},
+      {day:25,label:'Batas Lapor SPT Masa PPN',type:'gold',icon:'🧾',recurringMonthly:true},
+      {month:2,day:31,label:'Batas SPT Tahunan OP',type:'red',icon:'⚠️',recurringMonthly:false},
+      {month:3,day:30,label:'Batas SPT Tahunan Badan',type:'red',icon:'🏢',recurringMonthly:false},
+      {month:6,day:31,label:'Batas Perpanjangan SPT Tahunan OP',type:'gold',icon:'📅',recurringMonthly:false}
     ];
 
     function getEventsForDay(year,month,day){
@@ -2317,13 +2319,13 @@
       const tags = new Set(appState.tags);
 
       // Hero status
-      let statusClass='yellow', statusIcon='ΓÜí', statusText='Perlu Persiapan';
-      if(scores.readiness>=70&&scores.risk<50){statusClass='green';statusIcon='Γ£à';statusText='Siap Lapor';}
-      else if(scores.risk>=65||scores.readiness<40){statusClass='red';statusIcon='≡ƒö┤';statusText='Butuh Tindakan Segera';}
+      let statusClass='yellow', statusIcon='⚡', statusText='Perlu Persiapan';
+      if(scores.readiness>=70&&scores.risk<50){statusClass='green';statusIcon='✅';statusText='Siap Lapor';}
+      else if(scores.risk>=65||scores.readiness<40){statusClass='red';statusIcon='🔴';statusText='Butuh Tindakan Segera';}
 
       // Profile avatar emoji
-      const avatarMap={'type_marketplace':'≡ƒÅ¬','type_msme':'≡ƒÅ¡','type_freelancer':'≡ƒÆ╗','type_employee':'≡ƒºæ≡ƒÆ╝','type_student':'≡ƒôÜ'};
-      let avatarEmoji='≡ƒæñ';
+      const avatarMap={'type_marketplace':'🏪','type_msme':'🏭','type_freelancer':'💻','type_employee':'🧑💼','type_student':'📚'};
+      let avatarEmoji='👤';
       for(const [tag,emoji] of Object.entries(avatarMap)){ if(tags.has(tag)){avatarEmoji=emoji;break;} }
 
       // Personalized insight
@@ -2334,17 +2336,17 @@
 
       // Action cards
       const urgentActions=[], soonActions=[], laterActions=[];
-      if(tags.has('npwp_none')||tags.has('need_registration')) urgentActions.push({icon:'≡ƒåö',title:'Daftarkan NPWP / Aktivasi Akun',desc:'Selesaikan registrasi melalui kanal resmi DJP sebelum melanjutkan langkah apapun.'});
-      if(tags.has('coretax_problem')) urgentActions.push({icon:'≡ƒöº',title:'Perbaiki Akses Coretax',desc:'Catat pesan error dan gunakan jalur reset resmi. Jangan berbagi kode OTP.'});
-      if(tags.has('docs_low')) urgentActions.push({icon:'≡ƒôé',title:'Lengkapi Dokumen Utama',desc:'Kumpulkan bukti potong, rekap penghasilan, atau catatan omzet sebelum mulai mengisi.'});
-      if(tags.has('type_employee')) soonActions.push({icon:'≡ƒôä',title:'Minta Bukti Potong dari Kantor',desc:'Hubungi HRD atau bendahara untuk mendapatkan bukti potong PPh 21.'});
-      if(tags.has('type_freelancer')) soonActions.push({icon:'≡ƒùé∩╕Å',title:'Rekap Penghasilan Klien',desc:'Buat daftar klien, jumlah pembayaran, dan bukti potong bila ada.'});
-      if(tags.has('type_msme')||tags.has('type_marketplace')) soonActions.push({icon:'≡ƒôè',title:'Rekap Omzet Bulanan',desc:'Kumpulkan rekap penjualan dari semua kanal dan pisahkan dari pengeluaran pribadi.'});
-      if(tags.has('docs_high')) soonActions.push({icon:'≡ƒöì',title:'Periksa Silang Dokumen',desc:'Cocokkan data antar dokumen sebelum mengisi formulir resmi.'});
-      laterActions.push({icon:'≡ƒôû',title:'Pelajari Panduan Coretax',desc:'Kenali dashboard, menu pelaporan, dan alur pengisian sebelum mulai submit.'});
-      if(tags.has('worry_high')) laterActions.push({icon:'≡ƒñ¥',title:'Pertimbangkan Bantuan Ahli',desc:'Untuk kasus kompleks, konsultasi dengan ahli pajak dapat menghemat waktu dan risiko.'});
+      if(tags.has('npwp_none')||tags.has('need_registration')) urgentActions.push({icon:'🆔',title:'Daftarkan NPWP / Aktivasi Akun',desc:'Selesaikan registrasi melalui kanal resmi DJP sebelum melanjutkan langkah apapun.'});
+      if(tags.has('coretax_problem')) urgentActions.push({icon:'🔧',title:'Perbaiki Akses Coretax',desc:'Catat pesan error dan gunakan jalur reset resmi. Jangan berbagi kode OTP.'});
+      if(tags.has('docs_low')) urgentActions.push({icon:'📂',title:'Lengkapi Dokumen Utama',desc:'Kumpulkan bukti potong, rekap penghasilan, atau catatan omzet sebelum mulai mengisi.'});
+      if(tags.has('type_employee')) soonActions.push({icon:'📄',title:'Minta Bukti Potong dari Kantor',desc:'Hubungi HRD atau bendahara untuk mendapatkan bukti potong PPh 21.'});
+      if(tags.has('type_freelancer')) soonActions.push({icon:'🗂️',title:'Rekap Penghasilan Klien',desc:'Buat daftar klien, jumlah pembayaran, dan bukti potong bila ada.'});
+      if(tags.has('type_msme')||tags.has('type_marketplace')) soonActions.push({icon:'📊',title:'Rekap Omzet Bulanan',desc:'Kumpulkan rekap penjualan dari semua kanal dan pisahkan dari pengeluaran pribadi.'});
+      if(tags.has('docs_high')) soonActions.push({icon:'🔍',title:'Periksa Silang Dokumen',desc:'Cocokkan data antar dokumen sebelum mengisi formulir resmi.'});
+      laterActions.push({icon:'📖',title:'Pelajari Panduan Coretax',desc:'Kenali dashboard, menu pelaporan, dan alur pengisian sebelum mulai submit.'});
+      if(tags.has('worry_high')) laterActions.push({icon:'🤝',title:'Pertimbangkan Bantuan Ahli',desc:'Untuk kasus kompleks, konsultasi dengan ahli pajak dapat menghemat waktu dan risiko.'});
 
-      if(urgentActions.length===0) soonActions.unshift({icon:'≡ƒôï',title:'Siapkan Checklist Dokumen',desc:'Centang dokumen yang sudah siap menggunakan checklist interaktif di bawah.'});
+      if(urgentActions.length===0) soonActions.unshift({icon:'📋',title:'Siapkan Checklist Dokumen',desc:'Centang dokumen yang sudah siap menggunakan checklist interaktif di bawah.'});
       const singleNextAction = urgentActions[0] || soonActions[0] || laterActions[0];
 
       main.innerHTML = `
@@ -2364,7 +2366,7 @@
 
           <!-- SCORE GAUGES -->
           <div class="panel screen-card">
-            <div class="section-title" style="font-size:1.05rem;margin-bottom:16px">≡ƒôè Skor & Profil Pajak Anda</div>
+            <div class="section-title" style="font-size:1.05rem;margin-bottom:16px">📊 Skor & Profil Pajak Anda</div>
             <div class="gauge-grid" id="gaugeGrid">
               ${renderGauge('Kesiapan',scores.readiness,'kesiapan')}
               ${renderGauge('Risiko Admin.',scores.risk,'risiko')}
@@ -2377,32 +2379,32 @@
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px" class="result-two-col">
             <!-- PRIORITY ACTIONS -->
             <div class="panel screen-card">
-              <div class="section-title" style="font-size:1.05rem;margin-bottom:16px">≡ƒÄ» Tindakan Prioritas</div>
+              <div class="section-title" style="font-size:1.05rem;margin-bottom:16px">🎯 Tindakan Prioritas</div>
               <div class="action-next-box">
                 <div class="action-next-icon">${singleNextAction.icon}</div>
-                <div><h3>Langkah Paling Penting Sekarang</h3><p>${escapeHTML(singleNextAction.title)} ΓÇö ${escapeHTML(singleNextAction.desc)}</p></div>
+                <div><h3>Langkah Paling Penting Sekarang</h3><p>${escapeHTML(singleNextAction.title)} — ${escapeHTML(singleNextAction.desc)}</p></div>
               </div>
-              ${urgentActions.length>0?`<div class="action-tier-label">≡ƒö┤ Lakukan Sekarang</div><div class="action-cards">${urgentActions.map(a=>`<div class="action-card urgent"><div class="action-card-icon">${a.icon}</div><div><h4>${escapeHTML(a.title)}</h4><p>${escapeHTML(a.desc)}</p></div></div>`).join('')}</div>`:''}
-              ${soonActions.length>0?`<div class="action-tier-label">≡ƒƒí Minggu Ini</div><div class="action-cards">${soonActions.map(a=>`<div class="action-card soon"><div class="action-card-icon">${a.icon}</div><div><h4>${escapeHTML(a.title)}</h4><p>${escapeHTML(a.desc)}</p></div></div>`).join('')}</div>`:''}
-              ${laterActions.length>0?`<div class="action-tier-label">≡ƒƒó Bisa Ditunda</div><div class="action-cards">${laterActions.map(a=>`<div class="action-card later"><div class="action-card-icon">${a.icon}</div><div><h4>${escapeHTML(a.title)}</h4><p>${escapeHTML(a.desc)}</p></div></div>`).join('')}</div>`:''}
+              ${urgentActions.length>0?`<div class="action-tier-label">🔴 Lakukan Sekarang</div><div class="action-cards">${urgentActions.map(a=>`<div class="action-card urgent"><div class="action-card-icon">${a.icon}</div><div><h4>${escapeHTML(a.title)}</h4><p>${escapeHTML(a.desc)}</p></div></div>`).join('')}</div>`:''}
+              ${soonActions.length>0?`<div class="action-tier-label">🟡 Minggu Ini</div><div class="action-cards">${soonActions.map(a=>`<div class="action-card soon"><div class="action-card-icon">${a.icon}</div><div><h4>${escapeHTML(a.title)}</h4><p>${escapeHTML(a.desc)}</p></div></div>`).join('')}</div>`:''}
+              ${laterActions.length>0?`<div class="action-tier-label">🟢 Bisa Ditunda</div><div class="action-cards">${laterActions.map(a=>`<div class="action-card later"><div class="action-card-icon">${a.icon}</div><div><h4>${escapeHTML(a.title)}</h4><p>${escapeHTML(a.desc)}</p></div></div>`).join('')}</div>`:''}
             </div>
 
             <!-- TAX CALENDAR -->
             <div class="panel screen-card">
-              <div class="section-title" style="font-size:1.05rem;margin-bottom:16px">≡ƒôà Kalender Pajak</div>
+              <div class="section-title" style="font-size:1.05rem;margin-bottom:16px">📅 Kalender Pajak</div>
               <div class="cal-wrap" id="taxCal">${renderCalendar()}</div>
             </div>
           </div>
 
           <!-- INTERACTIVE CHECKLIST -->
           <div class="panel screen-card">
-            <div class="section-title" style="font-size:1.05rem;margin-bottom:16px">Γ£à Checklist Dokumen Interaktif</div>
+            <div class="section-title" style="font-size:1.05rem;margin-bottom:16px">✅ Checklist Dokumen Interaktif</div>
             <div id="checklistWrap">${renderChecklistHTML(checklist)}</div>
           </div>
 
           <!-- TAX ROADMAP -->
           <div class="panel screen-card">
-            <div class="section-title" style="font-size:1.05rem;margin-bottom:16px">≡ƒù║∩╕Å Jalur Panduan Langkah demi Langkah</div>
+            <div class="section-title" style="font-size:1.05rem;margin-bottom:16px">🗺️ Jalur Panduan Langkah demi Langkah</div>
             <p class="hint" style="margin:0 0 18px">Klik langkah untuk menandai selesai. Ikuti urutan dari atas ke bawah.</p>
             <div class="roadmap" id="roadmapWrap">${renderRoadmapHTML(guide)}</div>
           </div>
@@ -2410,11 +2412,11 @@
           <!-- COMMON MISTAKES & SECURITY (2 col) -->
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px" class="result-two-col">
             <div class="panel screen-card">
-              <div class="section-title" style="font-size:1.05rem;margin-bottom:12px">ΓÜá∩╕Å Kesalahan yang Perlu Dihindari</div>
+              <div class="section-title" style="font-size:1.05rem;margin-bottom:12px">⚠️ Kesalahan yang Perlu Dihindari</div>
               <ul class="list">${commonMistakes().map(x=>`<li>${escapeHTML(x)}</li>`).join('')}</ul>
             </div>
             <div class="panel screen-card">
-              <div class="section-title" style="font-size:1.05rem;margin-bottom:12px">≡ƒöÆ Catatan Keamanan</div>
+              <div class="section-title" style="font-size:1.05rem;margin-bottom:12px">🔒 Catatan Keamanan</div>
               <p>Jangan gunakan username atau password Coretax di PanduCore. PanduCore tidak pernah meminta password Coretax.</p>
               <p class="hint">Untuk pelaporan resmi, gunakan kanal resmi dan simpan bukti pelaporan dengan aman.</p>
             </div>
@@ -2422,19 +2424,19 @@
 
           <!-- EXPORT ACTIONS -->
           <div class="panel screen-card">
-            <div class="section-title" style="font-size:1.05rem;margin-bottom:14px">≡ƒÆ╛ Simpan & Bagikan Ringkasan</div>
+            <div class="section-title" style="font-size:1.05rem;margin-bottom:14px">💾 Simpan & Bagikan Ringkasan</div>
             <div class="action-bar">
-              <button class="btn btn-primary" onclick="window.print()">≡ƒû¿∩╕Å Cetak Hasil</button>
-              <button class="btn btn-gold" onclick="downloadJSON()">Γ¼ç∩╕Å Unduh Ringkasan</button>
-              <button class="btn btn-light" onclick="copySummaryWA()">≡ƒô▒ Salin untuk WhatsApp</button>
-              <button class="btn btn-light" onclick="setStep('questionnaire')">Γ£Å∩╕Å Ubah Jawaban</button>
+              <button class="btn btn-primary" onclick="window.print()">🖨️ Cetak Hasil</button>
+              <button class="btn btn-gold" onclick="downloadJSON()">⬇️ Unduh Ringkasan</button>
+              <button class="btn btn-light" onclick="copySummaryWA()">📱 Salin untuk WhatsApp</button>
+              <button class="btn btn-light" onclick="setStep('questionnaire')">✏️ Ubah Jawaban</button>
             </div>
           </div>
 
 
           <!-- TAX OBLIGATION SIMULATOR -->
           <div class="panel screen-card">
-            <div class="section-title" style="font-size:1.05rem;margin-bottom:16px">&#9881; Simulasi Kewajiban Pajak</div>
+            <div class="section-title" style="font-size:1.05rem;margin-bottom:16px">🧮 Simulasi Kewajiban Pajak</div>
             <p class="hint" style="margin:0 0 16px">Masukkan data kisaran untuk melihat estimasi ilustrasi. Bukan perhitungan resmi.</p>
             <div class="sim-shell">
               <div class="sim-controls">
@@ -2469,14 +2471,14 @@
 
           <!-- FREE AI CHATBOT -->
           <div class="panel screen-card">
-            <div class="section-title" style="font-size:1.05rem;margin-bottom:16px">&#128172; Tanya PanduCore AI <span style="font-size:.75rem;font-weight:600;color:var(--muted);margin-left:6px">Gratis</span></div>
+            <div class="section-title" style="font-size:1.05rem;margin-bottom:16px">🤖 Tanya PanduCore AI <span style="font-size:.75rem;font-weight:600;color:var(--muted);margin-left:6px">Gratis</span></div>
             <p class="hint" style="margin:0 0 14px">Tanya pertanyaan dasar pajak. Untuk konsultasi mendalam, gunakan layanan expert di bawah.</p>
             <div class="chatbot-shell">
               <div class="chatbot-header">
-                <div class="chatbot-avatar">&#128172;</div>
+                <div class="chatbot-avatar">🤖</div>
                 <div class="chatbot-hinfo">
                   <div class="chatbot-hname">PanduCore AI</div>
-                  <div class="chatbot-hstatus">&#9679; Siap menjawab pertanyaan pajak dasar</div>
+                  <div class="chatbot-hstatus">🟢 Siap menjawab pertanyaan pajak dasar</div>
                 </div>
                 <div class="chatbot-badge">AI GRATIS</div>
               </div>
@@ -2491,7 +2493,7 @@
                 <button class="cbot-chip" onclick="sendCbotMessage('PPh UMKM 0.5%')">PPh UMKM 0,5%</button>
               </div>
               <div class="chatbot-input-row">
-                <textarea class="chatbot-input" id="cbotInput" placeholder="Ketik pertanyaan pajak Anda..." rows="1" onkeydown="if(event.key==='Enter'&amp;&amp;!event.shiftKey){event.preventDefault();sendCbotInput()}"></textarea>
+                <textarea class="chatbot-input" id="cbotInput" placeholder="Ketik pertanyaan pajak Anda..." rows="1" onkeydown="if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();sendCbotInput()}"></textarea>
                 <button class="chatbot-send" onclick="sendCbotInput()">Kirim</button>
               </div>
               <div class="chatbot-upgrade-hint">Butuh analisis mendalam? <a onclick="setStep('consult_list')">Konsultasi dengan ahli pajak &rarr;</a></div>
@@ -2499,10 +2501,10 @@
           </div>
           <!-- PREMIUM CONSULTATION BANNER -->
           <div class="premium-banner">
-            <div class="premium-badge">Γ£¿ PREMIUM</div>
+            <div class="premium-badge">✨ PREMIUM</div>
             <h2>Butuh bantuan langsung dari ahli pajak?</h2>
             <p>Konsultasi 1 jam eksklusif dengan konsultan pajak berpengalaman dan tersertifikasi. Dapatkan jawaban personal untuk situasi pajak Anda.</p>
-            <button class="btn-premium" onclick="setStep('consult_list')">Temukan Konsultan Pajak ΓåÆ</button>
+            <button class="btn-premium" onclick="setStep('consult_list')">Temukan Konsultan Pajak →</button>
           </div>
         </section>`;
 
@@ -2525,7 +2527,7 @@
         if(cp){
           var tags=new Set(appState.tags||[]);
           var regs=getRegulationsForProfile(tags);
-          var cHTML='<div class="section-title" style="font-size:1.05rem;margin-bottom:16px">&#128203; Dasar Regulasi yang Relevan untuk Anda</div>'
+          var cHTML='<div class="section-title" style="font-size:1.05rem;margin-bottom:16px">📋 Dasar Regulasi yang Relevan untuk Anda</div>'
             +'<p class="hint" style="margin:0 0 14px">Klik regulasi untuk membaca penjelasan sederhana.</p>'
             +'<div class="citation-list">'
             +regs.map(function(r,i){
@@ -2534,7 +2536,7 @@
                   +'<span class="citation-badge '+r.status+'">'+r.status.toUpperCase()+'</span>'
                   +'<span class="citation-name">'+escapeHTML(r.name)+'</span>'
                   +'<span class="citation-date">'+escapeHTML(r.date)+'</span>'
-                  +'<span class="citation-chevron">&#9660;</span>'
+                  +'<span class="citation-chevron">▼</span>'
                 +'</div>'
                 +'<div class="citation-body">'
                   +'<div class="citation-topic">'+escapeHTML(r.topic)+'</div>'
@@ -2558,7 +2560,7 @@
       if(type==='kesiapan') ctx=value>=70?'Lebih baik dari rata-rata':value>=40?'Perlu persiapan lanjut':'Perlu perhatian khusus';
       else if(type==='risiko') ctx=value>=65?'Risiko tinggi':value>=40?'Risiko sedang':'Risiko rendah';
       else if(type==='dokumen') ctx=value>=70?'Dokumen relatif lengkap':value>=40?'Ada dokumen yang kurang':'Dokumen perlu dilengkapi';
-      else ctx=value>=70?'Butuh pendalaman lebih':value>=40?'Cukup familiar':'Pemula ΓÇö panduan lengkap tersedia';
+      else ctx=value>=70?'Butuh pendalaman lebih':value>=40?'Cukup familiar':'Pemula — panduan lengkap tersedia';
       return `<div class="gauge-wrap">
         <div class="gauge-svg-wrap">
           <svg class="gauge-svg" width="84" height="84" viewBox="0 0 84 84">
@@ -2600,9 +2602,9 @@
       const monthNames=['Januari','Februari','Maret','April','Mei','Juni','Juli','Agustus','September','Oktober','November','Desember'];
       const dayNames=['Min','Sen','Sel','Rab','Kam','Jum','Sab'];
       let calHTML=`<div class="cal-header-bar">
-        <button class="cal-nav" onclick="calNavigate(-1)" type="button">ΓÇ╣</button>
+        <button class="cal-nav" onclick="calNavigate(-1)" type="button">‹</button>
         <h3>${monthNames[month]} ${year}</h3>
-        <button class="cal-nav" onclick="calNavigate(1)" type="button">ΓÇ║</button>
+        <button class="cal-nav" onclick="calNavigate(1)" type="button">›</button>
       </div>
       <div class="cal-weekdays">${dayNames.map(d=>`<span>${d}</span>`).join('')}</div>
       <div class="cal-grid">`;
@@ -2649,18 +2651,18 @@
       let done=0;
       checklist.forEach((_,i)=>{ if(appState.checklist[i]) done++; });
       let html=`<div class="checklist-progress"><div style="display:flex;justify-content:space-between;font-size:.88rem;color:var(--muted)"><span>${done} dari ${checklist.length} dokumen siap</span><span>${Math.round(done/Math.max(checklist.length,1)*100)}%</span></div><div class="checklist-pbar"><div class="checklist-pfill" style="width:${Math.round(done/Math.max(checklist.length,1)*100)}%"></div></div></div>`;
-      html+=`<div class="checklist-group-label">≡ƒôï Wajib</div><div class="checklist-items">`;
+      html+=`<div class="checklist-group-label">📋 Wajib</div><div class="checklist-items">`;
       required.forEach((item,i)=>{
         const isDone=!!appState.checklist[i];
-        html+=`<div class="cl-item${isDone?' done':''}" onclick="toggleChecklist(${i})" id="cli${i}"><div class="cl-checkbox">${isDone?'Γ£ô':''}</div><div class="cl-label">${escapeHTML(item)}</div><span class="cl-badge req">Wajib</span></div>`;
+        html+=`<div class="cl-item${isDone?' done':''}" onclick="toggleChecklist(${i})" id="cli${i}"><div class="cl-checkbox">${isDone?'✓':''}</div><div class="cl-label">${escapeHTML(item)}</div><span class="cl-badge req">Wajib</span></div>`;
       });
       html+=`</div>`;
       if(optional.length>0){
-        html+=`<div class="checklist-group-label">≡ƒôü Pendukung</div><div class="checklist-items">`;
+        html+=`<div class="checklist-group-label">📁 Pendukung</div><div class="checklist-items">`;
         optional.forEach((item,i)=>{
           const idx=i+required.length;
           const isDone=!!appState.checklist[idx];
-          html+=`<div class="cl-item${isDone?' done':''}" onclick="toggleChecklist(${idx})" id="cli${idx}"><div class="cl-checkbox">${isDone?'Γ£ô':''}</div><div class="cl-label">${escapeHTML(item)}</div><span class="cl-badge opt">Pendukung</span></div>`;
+          html+=`<div class="cl-item${isDone?' done':''}" onclick="toggleChecklist(${idx})" id="cli${idx}"><div class="cl-checkbox">${isDone?'✓':''}</div><div class="cl-label">${escapeHTML(item)}</div><span class="cl-badge opt">Pendukung</span></div>`;
         });
         html+=`</div>`;
       }
@@ -2679,11 +2681,11 @@
       return guide.map(([title,desc,cat],i)=>{
         const isDone=!!appState.roadmapDone[i];
         const isNext=!isDone&&(i===0||appState.roadmapDone[i-1]);
-        const times=['~10 mnt','~15 mnt','~2ΓÇô3 hari','~30 mnt','~1 jam','~2 hari','~20 mnt','~45 mnt','~1 hari','~30 mnt','~15 mnt','~2 mnt','~5 mnt','~10 mnt','~20 mnt','~30 mnt'];
+        const times=['~10 mnt','~15 mnt','~2–3 hari','~30 mnt','~1 jam','~2 hari','~20 mnt','~45 mnt','~1 hari','~30 mnt','~15 mnt','~2 mnt','~5 mnt','~10 mnt','~20 mnt','~30 mnt'];
         const time=times[i%times.length];
         return `<div class="rm-step${isDone?' done':isNext?' active':''}" onclick="toggleRoadmap(${i})" id="rm${i}">
-          <div class="rm-circle">${isDone?'Γ£ô':i+1}</div>
-          <div class="rm-meta">${cat?`<small>${escapeHTML(cat)}</small>`:''}<span class="rm-time">ΓÅ▒ ${time}</span></div>
+          <div class="rm-circle">${isDone?'✓':i+1}</div>
+          <div class="rm-meta">${cat?`<small>${escapeHTML(cat)}</small>`:''}<span class="rm-time">⏱ ${time}</span></div>
           <strong>${escapeHTML(title)}</strong>
           <span>${escapeHTML(desc)}</span>
         </div>`;
@@ -2710,8 +2712,8 @@
     }
     function copySummaryWA(){
       const s=appState.scores;
-      const text=`*Ringkasan Pajak PanduCore*\nΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöüΓöü\n≡ƒæñ ${appState.user.displayName||'Pengguna'} ΓÇö ${appState.pathway.profile}\n≡ƒôè Kesiapan: ${s.readiness}% | Risiko: ${s.risk}% | Dokumen: ${s.documentCompleteness}%\n\n≡ƒÄ» *Rekomendasi Prioritas:*\n${appState.recommendations.slice(0,3).map((r,i)=>`${i+1}. ${r}`).join('\n')}\n\nDibuat oleh PanduCore ΓÇö Platform Panduan Pajak Digital`;
-      navigator.clipboard.writeText(text).then(()=>openInfoModal('Disalin! ≡ƒô▒','<p>Teks ringkasan sudah disalin. Paste langsung ke WhatsApp atau Telegram untuk dibagikan ke konsultan atau rekan Anda.</p>'));
+      const text=`*Ringkasan Pajak PanduCore*\n━━━━━━━━━━━━━━━━━\n👤 ${appState.user.displayName||'Pengguna'} — ${appState.pathway.profile}\n📊 Kesiapan: ${s.readiness}% | Risiko: ${s.risk}% | Dokumen: ${s.documentCompleteness}%\n\n🎯 *Rekomendasi Prioritas:*\n${appState.recommendations.slice(0,3).map((r,i)=>`${i+1}. ${r}`).join('\n')}\n\nDibuat oleh PanduCore — Platform Panduan Pajak Digital`;
+      navigator.clipboard.writeText(text).then(()=>openInfoModal('Disalin! 📱','<p>Teks ringkasan sudah disalin. Paste langsung ke WhatsApp atau Telegram untuk dibagikan ke konsultan atau rekan Anda.</p>'));
     }
     function copySummary(){
       const text = `PanduCore - ${appState.pathway.profile}\nJalur: ${appState.pathway.main}\nKesiapan: ${appState.scores.readiness}\nRisiko: ${appState.scores.risk}\nRekomendasi:\n- ${appState.recommendations.join('\n- ')}`;
@@ -2732,10 +2734,10 @@
       main.innerHTML=`
         <section>
           <div class="consult-header">
-            <button class="btn btn-light" onclick="setStep('result')" style="flex-shrink:0">ΓåÉ Kembali</button>
+            <button class="btn btn-light" onclick="setStep('result')" style="flex-shrink:0">← Kembali</button>
             <h1>Pilih Konsultan Pajak</h1>
           </div>
-          <div class="info-box" style="margin-bottom:18px"><div class="box-icon">Γ£¿</div><div>Konsultasi 1 jam langsung dengan konsultan berpengalaman. Sesi dimulai segera setelah pembayaran dikonfirmasi.</div></div>
+          <div class="info-box" style="margin-bottom:18px"><div class="box-icon">✨</div><div>Konsultasi 1 jam langsung dengan konsultan berpengalaman. Sesi dimulai segera setelah pembayaran dikonfirmasi.</div></div>
           <div class="filter-bar">${filterBtns.map(f=>`<button class="filter-btn${_consultFilter===f.key?' active':''}" onclick="filterConsultants('${f.key}')">${f.label}</button>`).join('')}</div>
           <div class="expert-grid">${filtered.map(c=>`
             <div class="expert-card${c.featured?' featured':''}">
@@ -2744,7 +2746,7 @@
               <div class="expert-name">${escapeHTML(c.name)}</div>
               <div class="expert-title">${escapeHTML(c.title)}</div>
               <div class="expert-tags">${c.tags.map(t=>`<span class="expert-tag">${t}</span>`).join('')}</div>
-              <div class="expert-stats"><div>Γ¡É <span>${c.rating}</span></div><div>≡ƒÆ¼ <span>${c.sessions}</span> sesi</div></div>
+              <div class="expert-stats"><div>⭐ <span>${c.rating}</span></div><div>💬 <span>${c.sessions}</span> sesi</div></div>
               <div class="expert-price">Rp ${c.price.toLocaleString('id-ID')} <small>/ sesi 1 jam</small></div>
               <p style="font-size:.82rem;color:var(--muted);margin:0 0 14px;line-height:1.4">${escapeHTML(c.bio)}</p>
               <button class="btn-choose" onclick="selectConsultant(${c.id})">Pilih Konsultan</button>
@@ -2769,13 +2771,13 @@
       const expert=appState.consult.selectedExpert;
       if(!expert){setStep('consult_list');return;}
       const methods=[
-        {key:'bca',icon:'≡ƒÅª',name:'Transfer Bank BCA'},
-        {key:'mandiri',icon:'≡ƒÅª',name:'Transfer Bank Mandiri'},
-        {key:'qris',icon:'≡ƒô▒',name:'QRIS'},
-        {key:'va_bri',icon:'≡ƒÅª',name:'Virtual Account BRI'},
-        {key:'gopay',icon:'≡ƒÆÜ',name:'GoPay'},
-        {key:'ovo',icon:'≡ƒÆ£',name:'OVO'},
-        {key:'dana',icon:'≡ƒÆÖ',name:'DANA'}
+        {key:'bca',icon:'🏦',name:'Transfer Bank BCA'},
+        {key:'mandiri',icon:'🏦',name:'Transfer Bank Mandiri'},
+        {key:'qris',icon:'📱',name:'QRIS'},
+        {key:'va_bri',icon:'🏦',name:'Virtual Account BRI'},
+        {key:'gopay',icon:'💚',name:'GoPay'},
+        {key:'ovo',icon:'💜',name:'OVO'},
+        {key:'dana',icon:'💙',name:'DANA'}
       ];
       const selected=appState.consult.paymentMethod||'qris';
       const platformFee=5000;
@@ -2783,7 +2785,7 @@
       main.innerHTML=`
         <section>
           <div style="display:flex;align-items:center;gap:12px;margin-bottom:20px;flex-wrap:wrap">
-            <button class="btn btn-light" onclick="setStep('consult_list')">ΓåÉ Kembali</button>
+            <button class="btn btn-light" onclick="setStep('consult_list')">← Kembali</button>
             <h1 style="margin:0;color:var(--navy);font-size:1.5rem">Konfirmasi Pembayaran</h1>
           </div>
           <div class="pay-layout">
@@ -2809,7 +2811,7 @@
                 <div class="pay-row"><span>Biaya Platform</span><span>Rp ${platformFee.toLocaleString('id-ID')}</span></div>
                 <div class="pay-row total"><span>Total</span><span>Rp ${total.toLocaleString('id-ID')}</span></div>
               </div>
-              <button class="btn btn-gold btn-full" style="margin-top:14px;padding:16px;font-size:1rem" onclick="confirmPayment()">≡ƒÆ│ Bayar Sekarang</button>
+              <button class="btn btn-gold btn-full" style="margin-top:14px;padding:16px;font-size:1rem" onclick="confirmPayment()">💳 Bayar Sekarang</button>
               <p style="text-align:center;font-size:.78rem;color:var(--muted);margin-top:8px">Sesi dimulai segera setelah pembayaran terverifikasi</p>
             </div>
           </div>
@@ -3034,7 +3036,7 @@
 
     function showSessionEndModal(){
       const expert=appState.consult.selectedExpert;
-      const starsHTML=[1,2,3,4,5].map(function(i){return '<span class="star-btn" onclick="rateConsultant('+i+')" data-star="'+i+'">Γ¡É</span>';}).join('');
+      const starsHTML=[1,2,3,4,5].map(function(i){return '<span class="star-btn" onclick="rateConsultant('+i+')" data-star="'+i+'">⭐</span>';}).join('');
       const expertName=expert?escapeHTML(expert.name):'';
       const html='<div style="text-align:center;padding:8px">'+
         '<p style="font-size:1rem">Sesi 1 jam dengan <strong>'+expertName+'</strong> telah selesai.</p>'+
@@ -3045,7 +3047,7 @@
         '</div>'+
         '<button class="btn btn-primary btn-full" onclick="endSession()" style="margin-top:8px">Kembali ke Hasil PanduCore</button>'+
         '</div>';
-      openInfoModal('Sesi Konsultasi Selesai Γ£à', html);
+      openInfoModal('Sesi Konsultasi Selesai ✅', html);
     }
 
     function rateConsultant(stars){
